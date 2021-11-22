@@ -3,3 +3,11 @@ const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
  'ovo','porco','queijo','rabanete','sabonete','topeira'];
 
 console.log(palavras)
+
+function geradorDeLetra() {
+
+    const alfabeto = "abcdefghijklmnopqrstuvwxyz"
+  
+    return alfabeto[Math.floor(Math.random() * alfabeto.length)]
+}
+geradorDeLetra()
