@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+}
+.header, .footer{
+    height: 10vh;
+    text-align: center;
+}
+.main{
+    height: 70vh;
+}
