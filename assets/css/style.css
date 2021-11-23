@@ -1,41 +1,112 @@
-body{
-    text-align: center;
+:root{
+    /* CORES */
     
-    
+    /* FONTES */
+    --fontfamily-header-footer: 'M PLUS 1', sans-serif;
+    --fontfamily-hp: 'Harry Potter', sans-serif;
+    /* TAMANHOS */
+    --fontsize-header: 1.5em;
+    --fontsize-footer: 1em;
 }
-.header, .footer{
+
+/* HEADER */
+.header, .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90vw;
     height: 10vh;
-    text-align: center;
-}
-.main{
-    height: 70vh;
+    font-family: var(--fontfamily-hp);
+    font-size: var(--fontsize-header);
+    margin: 0 auto;
+    padding: 30px 0 10px;
 }
 
-td{
-    cursor:url(/assets/img/varinha.cur),auto;
-    border: 1px solid black;
-    width: 25px;
-    height: 25px;
+/* FOOTER */
+.footer{
+    font-size: var(--fontsize-footer)
+
+}
+/* MAIN */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--fontfamily-hp);
+    width: 90vw;
+    height: 80vh;
+    margin: 0 auto;
+}
+.objetivo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+.objetivo p{
     text-align: center;
+    line-height: 1.5;
+}
+/* IMAGEM */
+.imagem img {
+    display: flex;
+    width: 50px;
+}
+.imagem figcaption{
+    display: none;
+}
+
+/* CAÇA PALAVRAS */
+.cacapalavras {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70%;
+}
+.palavras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+.palavras p{
+    font-family: var(--fontfamily-hp);
+    font-size: 14px;
+}
+/* TABELA */
+.table{
+    font-family: var(--fontfamily-header-footer);
+    border: 2px solid green;
+    cursor:url(/assets/img/varinha.cur),auto;
+}
+.table td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid blue;
+    color: black;
+}
+.table td:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+
+
+/* MEDIA QUERIES 500px, 800px, 1000px */
+@media screen and (min-width: 500px) {
     
 }
 
-td:hover{
-    background: orange;
+@media screen and (min-width: 800px) {
+    
 }
 
-table{
- display: flex;
- justify-content: center;
-
+@media screen and (min-width: 1000px) {
+    
 }
-
-
-/*adcionando cursor*/
-
-
-
-/*table {
- background-image: url('/assets/img/fundo.jpg');
-  background-size: cover;
-}*/
