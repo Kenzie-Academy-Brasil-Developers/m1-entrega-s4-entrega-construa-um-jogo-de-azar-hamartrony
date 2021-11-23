@@ -1,5 +1,7 @@
 body{
     text-align: center;
+    
+    
 }
 .header, .footer{
     height: 10vh;
@@ -8,3 +10,32 @@ body{
 .main{
     height: 70vh;
 }
+
+td{
+    cursor:url(/assets/img/varinha.cur),auto;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    
+}
+
+td:hover{
+    background: orange;
+}
+
+table{
+ display: flex;
+ justify-content: center;
+
+}
+
+
+/*adcionando cursor*/
+
+
+
+/*table {
+ background-image: url('/assets/img/fundo.jpg');
+  background-size: cover;
+}*/
