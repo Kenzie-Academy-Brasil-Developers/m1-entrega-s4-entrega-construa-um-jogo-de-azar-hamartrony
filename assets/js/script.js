@@ -36,17 +36,23 @@ function aleatorio0a19() {
 //FUNÇÃO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
 let j = 0;
+let arrayPalavraAleatoriaInserida = []
+let arrayLetraClicada = []
 for (let i = aleatorio1a10(); i<cells.length; i+=10){
     //continuar o array de id para selecionar a posicao de onde a palavra foi inserida
-    console.log(cells[i].id)
+    //console.log(cells[i].id)    
         
     if ( palavra[j] === undefined){
         cells[i].innerText = geradorDeLetra()
     }else{
         cells[i].innerText = palavra[j];
-        j+=1;      
+        j+=1;
+        arrayPalavraAleatoriaInserida.push(cells[i].id)
+        console.log(arrayPalavraAleatoriaInserida)       
     }
 }
+
+
 
 
 //AS FUNÇÕES ABAIXO ESTÃO EM OBSERVAÇÃO AINDA
@@ -55,7 +61,8 @@ for (let i = aleatorio1a10(); i<cells.length; i+=10){
 
 const handleClik = function(event){            
     const cellid = event.target.id;
-    console.log(cellid);
+    arrayLetraClicada.push(cellid.id);
+    console.log(arrayLetraClicada)
 }
 
  //TESTE DE APLICAÇÃO A ID PARA A PALAVRA CORRETA
