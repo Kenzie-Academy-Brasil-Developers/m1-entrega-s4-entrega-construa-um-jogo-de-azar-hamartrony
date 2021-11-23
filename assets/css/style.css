@@ -50,6 +50,13 @@
     height: 79vh;
     margin: 0 auto;
 }
+
+#musica {
+ width: 100%;
+ padding-left: 10px;
+
+}
+
 .objetivo {
     display: flex;
     flex-direction: row;
@@ -86,7 +93,6 @@
 .cacapalavras {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     height: 70%;
 }
 .palavras{
@@ -129,12 +135,19 @@
 @media screen and (min-width: 800px) {
     .container{
         background-image: url('/assets/img/another-background.jpg');
-    }    
+    } 
+    #musica {
+     position: relative;
+     left: 12%;
+    }   
 }
 
 @media screen and (min-width: 1000px) {
     .container{
         background-image: url(/assets/img/bg-hp.jpg);
+    }
+    #musica {
+     max-width: 990px;
     }
     /* IMAGEM */
 

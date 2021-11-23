@@ -41,13 +41,19 @@ for (let i=0; i<cells.length; i++ ){
 }
 
 
-// function geradorDeLetra() {
-
-//     const alfabeto = "abcdefghijklmnopqrstuvwxyz"
-  
-//     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
-//  }
-//  geradorDeLetra()
+const player = document.getElementById('audio');
+const button = document.getElementById('musica');
+function play() {
+    player.play()
+}
+ function pause() {
+    player.pause();
+ }
+  button.addEventListener('click', function(){
+         if(player.paused){
+             play();
+         }else{pause();}
+});
  
 
 
