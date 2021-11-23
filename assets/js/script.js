@@ -64,10 +64,21 @@ for (let i=0; i<cells.length; i++ ){
 
 const testes = "testado";
 let j = 0;
-for (let i = 1; i<cells.length; i+=10){
-   
+for (let i = 0; i<cells.length; i+=10){
+    
+    if ( testes[j] === undefined){
+        console.log(testes[j]);
+        console.log(geradorDeLetra());
+        console.log(cells[i])
+        cells[i].innerText = geradorDeLetra()
+
+    }else{
         cells[i].innerText = testes[j];
         j+=1;
+      
+    }
+   
+      
   
    
 }
