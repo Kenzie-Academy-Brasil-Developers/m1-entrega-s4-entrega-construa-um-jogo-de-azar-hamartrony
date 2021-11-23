@@ -1,8 +1,14 @@
 const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
  'galo', 'hiper', 'imortal','janela','kenzie','lago', 'madeira', 'nave',
- 'ovo','porco','queijo','rabanete','sabonete','topeira'];
+ 'ovo','porco','queijo','rabanete','sabonete','topeira']
+ 
+ function geradorDeLetra() {
 
-console.log(palavras)
+    const alfabeto = "abcdefghijklmnopqrstuvwxyz"
+  
+    return alfabeto[Math.floor(Math.random() * alfabeto.length)]
+ }
+ geradorDeLetra()
 
 function catchs(){
 
@@ -39,3 +45,33 @@ function tester(){
 }
 
 catchs()
+
+
+
+const handleClik = function(event){            
+    const cellid = event.target.id;
+    console.log(cellid);
+}
+const cells = document.querySelectorAll('td');
+
+
+for (let i=0; i<cells.length; i++ ){
+    
+    cells[i].addEventListener('click', handleClik);
+    cells[i].innerText = geradorDeLetra()
+
+}
+
+const testes = "testado";
+let j = 0;
+for (let i = 1; i<cells.length; i+=10){
+   
+        cells[i].innerText = testes[j];
+        j+=1;
+  
+   
+}
+
+
+
+
