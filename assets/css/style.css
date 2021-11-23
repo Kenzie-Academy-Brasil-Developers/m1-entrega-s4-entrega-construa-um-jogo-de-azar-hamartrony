@@ -9,6 +9,11 @@
     --fontsize-footer: 1em;
 }
 
+.container{
+    background-image: url('/assets/img/hp-animated(1).jpg');
+    background-size: cover;
+}
+
 /* HEADER */
 .header, .footer {
     display: flex;
@@ -20,6 +25,7 @@
     height: 10vh;
     font-family: var(--fontfamily-hp);
     font-size: var(--fontsize-header);
+    color: white;
     margin: 0 auto;
     padding: 30px 0 10px;
 }
@@ -78,16 +84,20 @@
     font-size: 14px;
 }
 /* TABELA */
-.table{
+.table {
+    background-color: black;
+    color: white;
+    opacity: 0.6;
     font-family: var(--fontfamily-header-footer);
     border: 2px solid green;
+    border-radius: 5px;
 }
 .table td {
     width: 30px;
     height: 30px;
     text-align: center;
     vertical-align: middle;
-    border: 1px solid blue;
+    border: 1px solid white;
 }
 .table td:hover{
     background-color: orange;
