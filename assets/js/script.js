@@ -38,6 +38,7 @@ const palavra = geradorDePalavra();
 let j = 0;
 let arrayPalavraAleatoriaInserida = []
 let arrayLetraClicada = []
+
 for (let i = aleatorio1a10(); i<cells.length; i+=10){
     //continuar o array de id para selecionar a posicao de onde a palavra foi inserida
     //console.log(cells[i].id)    
@@ -50,7 +51,16 @@ for (let i = aleatorio1a10(); i<cells.length; i+=10){
         arrayPalavraAleatoriaInserida.push(cells[i].id)
         console.log(arrayPalavraAleatoriaInserida)       
     }
+
 }
+
+  
+  
+  
+    
+
+  
+
 
 
 
@@ -58,12 +68,44 @@ for (let i = aleatorio1a10(); i<cells.length; i+=10){
 //AS FUNÇÕES ABAIXO ESTÃO EM OBSERVAÇÃO AINDA
 
 //FUNÇÃO QUE ADICIONA LETRAS GERADAS NA TABELA
-
-const handleClik = function(event){            
-    const cellid = event.target.id;
-    arrayLetraClicada.push(cellid.id);
+const handleClik = function(event){
+    const cell = event.target.id
+    arrayLetraClicada.push(cell)
     console.log(arrayLetraClicada)
+
+
+    if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
+        let string1 = arrayLetraClicada.join("");
+        let string2 = arrayPalavraAleatoriaInserida.join("");
+    if (string1 == string2){
+        alert("VENCEMO!");
+    } }
+
+  
+
+   
+    
+    if (arrayPalavraAleatoriaInserida.length < arrayLetraClicada.length){
+        alert("Errou a frase!");
+        arrayLetraClicada = [];
+        
+    }
+
+
+   
 }
+   
+
+for (let i=0; i<cells.length; i++ ){
+    cells[i].addEventListener('click', handleClik);
+    
+}
+
+
+  
+
+
+
 
  //TESTE DE APLICAÇÃO A ID PARA A PALAVRA CORRETA
  function catchs(){
