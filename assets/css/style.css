@@ -9,9 +9,7 @@
     --fontsize-footer: 1em;
 }
 
-body{
-    text-align: center;
-}
+/* HEADER */
 .header, .footer {
     display: flex;
     flex-direction: row;
@@ -22,10 +20,47 @@ body{
     font-family: var(--fontfamily-hp);
     font-size: var(--fontsize-header)
 }
+
+/* FOOTER */
 .footer{
     font-size: var(--fontsize-footer)
+
 }
-.main{
+/* MAIN */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: var(--fontfamily-hp);
     height: 80vh;
 }
+.main p{
+    margin: 10px;
+}
+
+/* CAÇA PALAVRAS */
+.cacapalavras{
+    display: flex;
+}
+
+/* IMAGEM LATERAL */
+.imagem figcaption{
+    display: none;
+}
+
+/* TABELA */
+.table{
+    border: 10px solid green;
+    margin: 10px;
+}
+.table td{
+    border: 1px solid blue;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.table td:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
