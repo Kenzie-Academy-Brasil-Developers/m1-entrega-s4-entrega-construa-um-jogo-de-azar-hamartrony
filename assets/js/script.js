@@ -1,6 +1,10 @@
 const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
  'galo', 'hiper', 'imortal','janela','kenzie','lago', 'madeira', 'nave',
+<<<<<<< HEAD
+ 'ovo','porco','queijo','rabanete','sabonete','topeira']
+=======
  'ovo','porco','queijo','rabanete','sabonete','topeira'];
+>>>>>>> 28821147ba1c5b0cefd23d3b71eabf00beb7179c
  
  function geradorDeLetra() {
 
@@ -10,7 +14,11 @@ const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
  }
  geradorDeLetra()
 
+<<<<<<< HEAD
+ let currentPlayer = 'X';   //jogador da vez variavel
+=======
 let currentPlayer = 'X';   //jogador da vez variavel
+>>>>>>> 28821147ba1c5b0cefd23d3b71eabf00beb7179c
 let nextPlayer = 'O';       //proximo jogador variavel
 
 let playerXSelections = [];     //array que armazena os clicks

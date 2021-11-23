@@ -36,6 +36,7 @@
 
 }
 /* MAIN */
+
 .main {
     display: flex;
     flex-direction: column;
@@ -92,7 +93,8 @@
     border: 2px solid green;
     border-radius: 5px;
 }
-.table td {
+
+table td {
     width: 30px;
     height: 30px;
     text-align: center;
@@ -101,7 +103,8 @@
 }
 .table td:hover{
     background-color: orange;
-    cursor: pointer;
+    cursor:url(/assets/img/varinha.cur),auto;
+    
 }
 
 
