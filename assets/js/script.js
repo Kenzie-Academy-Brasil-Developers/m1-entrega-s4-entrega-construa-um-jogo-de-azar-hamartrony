@@ -37,13 +37,14 @@ function aleatorio0a19() {
 const palavra = geradorDePalavra();
 let j = 0;
 for (let i = aleatorio1a10(); i<cells.length; i+=10){
+    //continuar o array de id para selecionar a posicao de onde a palavra foi inserida
+    console.log(cells[i].id)
         
     if ( palavra[j] === undefined){
         cells[i].innerText = geradorDeLetra()
     }else{
         cells[i].innerText = palavra[j];
-        j+=1;
-      
+        j+=1;      
     }
 }
 
