@@ -8,13 +8,13 @@ function geradorDeLetra(){
     const alfabeto = "abcdefghijklmnopqrstuvwxyz"
     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
 }
-//FUNÇÃO QUE ESCOLHE 3 PALAVRAS ALEATORIAS DENTRO DO ARRAY DE PALAVRAS 
+//FUNÇÃO QUE ESCOLHE 1 PALAVRAS ALEATORIAS DENTRO DO ARRAY DE PALAVRAS 
 let result = [];
     function geradorDePalavra(){
     for(let i = 0; i < 1; i++){
     result.push(palavras[aleatorio0a19()])
     }
-    console.log(result)
+    return result.join(" ")
 }
 
     const cells = document.querySelectorAll('td');
@@ -34,7 +34,7 @@ function aleatorio0a19() {
     return Math.floor(Math.random()* 19 + 1);   
 }
 //FUNÇÃO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
-const palavra = "marcelo";
+const palavra = geradorDePalavra();
 let j = 0;
 for (let i = aleatorio1a10(); i<cells.length; i+=10){
         
