@@ -1,6 +1,6 @@
-const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
- 'galo', 'hiper', 'imortal','janela','kenzie','lago', 'madeira', 'nave',
- 'ovo','porco','queijo','rabanete','sabonete','topeira']
+const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
+'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
+'cornival','harry','hermione','minerva','neville','edwiges']
  
  function geradorDeLetra() {
 
