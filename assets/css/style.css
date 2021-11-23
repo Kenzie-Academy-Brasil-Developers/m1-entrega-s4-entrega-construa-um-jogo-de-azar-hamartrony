@@ -30,6 +30,7 @@
 
 }
 /* MAIN */
+
 .main {
     display: flex;
     flex-direction: column;
@@ -81,21 +82,20 @@
 .table{
     font-family: var(--fontfamily-header-footer);
     border: 2px solid green;
-    cursor:url(/assets/img/varinha.cur),auto;
 }
-.table td {
+
+table td {
     width: 30px;
     height: 30px;
     text-align: center;
     vertical-align: middle;
     border: 1px solid blue;
-    color: black;
 }
 .table td:hover{
     background-color: orange;
-    cursor: pointer;
+    cursor:url(/assets/img/varinha.cur),auto;
+    
 }
-
 
 
 /* MEDIA QUERIES 500px, 800px, 1000px */
