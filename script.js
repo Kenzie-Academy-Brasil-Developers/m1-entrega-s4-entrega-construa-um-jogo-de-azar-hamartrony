@@ -54,15 +54,6 @@ function geradorDeLetra() {
     return Math.floor(Math.random()* 19 + 1);    
   }
 
- function geradorDePalavra(){
-     let result = [];
-
-     for(let i = 0; i < 3; i++){
-         result.push(palavras[aleatorio0a19()])
-     }
-     return result;
- }
- 
 
 
 
