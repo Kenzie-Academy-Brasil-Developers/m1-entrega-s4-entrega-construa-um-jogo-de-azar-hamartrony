@@ -62,9 +62,13 @@ for (let i=0; i<cells.length; i++ ){
 
 }
 
+function aleatorio1a10() {
+    return Math.floor(Math.random()* 10 + 1);   
+  }
+
 const testes = "testado";
 let j = 0;
-for (let i = 0; i<cells.length; i+=10){
+for (let i = aleatorio1a10(); i<cells.length; i+=10){
     
     if ( testes[j] === undefined){
         console.log(testes[j]);
