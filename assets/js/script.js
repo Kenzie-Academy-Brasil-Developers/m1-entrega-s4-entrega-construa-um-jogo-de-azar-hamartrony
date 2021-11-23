@@ -66,7 +66,7 @@ function aleatorio1a10() {
     return Math.floor(Math.random()* 10 + 1);   
   }
 
-const testes = "testado";
+const testes = array[radom];
 let j = 0;
 for (let i = aleatorio1a10(); i<cells.length; i+=10){
     
