@@ -1,7 +1,7 @@
 //ARRAY DE PALAVRAS DO JOGO
-const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
- 'galo', 'hiper', 'imortal','janela','kenzie','lago', 'madeira', 'nave',
- 'ovo','porco','queijo','rabanete','sabonete','topeira']
+const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
+'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
+'cornival','harry','hermione','minerva','neville','edwiges']
  
 //GERADOR DE LETRAS ALEATORIAS NA TABELA
 function geradorDeLetra(){
@@ -11,7 +11,7 @@ function geradorDeLetra(){
 //FUNÇÃO QUE ESCOLHE 3 PALAVRAS ALEATORIAS DENTRO DO ARRAY DE PALAVRAS 
 let result = [];
     function geradorDePalavra(){
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < 1; i++){
     result.push(palavras[aleatorio0a19()])
     }
     console.log(result)
@@ -28,6 +28,10 @@ let result = [];
 //FUNÇÃO QUE JOGA A PALAVRA EM UMA POSIÇÃO ALEATORIA NA TABELA
 function aleatorio1a10() {
     return Math.floor(Math.random()* 10 + 1);   
+}
+
+function aleatorio0a19() {
+    return Math.floor(Math.random()* 19 + 1);   
 }
 //FUNÇÃO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = "marcelo";
