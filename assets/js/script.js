@@ -1,24 +1,17 @@
 const palavras = ['abelha','banana','cadeira','decolar','esmola','faca',
  'galo', 'hiper', 'imortal','janela','kenzie','lago', 'madeira', 'nave',
-<<<<<<< HEAD
  'ovo','porco','queijo','rabanete','sabonete','topeira']
-=======
- 'ovo','porco','queijo','rabanete','sabonete','topeira'];
->>>>>>> 28821147ba1c5b0cefd23d3b71eabf00beb7179c
  
  function geradorDeLetra() {
 
-    const alfabeto = "abcdefghijklmnopqrstuvwxyz"
-  
-    return alfabeto[Math.floor(Math.random() * alfabeto.length)]
+    const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+    return alfabeto[Math.floor(Math.random() * alfabeto.length)];
+    
  }
  geradorDeLetra()
 
-<<<<<<< HEAD
- let currentPlayer = 'X';   //jogador da vez variavel
-=======
 let currentPlayer = 'X';   //jogador da vez variavel
->>>>>>> 28821147ba1c5b0cefd23d3b71eabf00beb7179c
 let nextPlayer = 'O';       //proximo jogador variavel
 
 let playerXSelections = [];     //array que armazena os clicks
@@ -48,13 +41,13 @@ for (let i=0; i<cells.length; i++ ){
 }
 
 
-function geradorDeLetra() {
+// function geradorDeLetra() {
 
-    const alfabeto = "abcdefghijklmnopqrstuvwxyz"
+//     const alfabeto = "abcdefghijklmnopqrstuvwxyz"
   
-    return alfabeto[Math.floor(Math.random() * alfabeto.length)]
- }
- geradorDeLetra()
+//     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
+//  }
+//  geradorDeLetra()
  
 
 
