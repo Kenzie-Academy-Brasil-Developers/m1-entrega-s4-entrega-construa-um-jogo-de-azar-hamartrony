@@ -1,10 +1,31 @@
+:root{
+    /* CORES */
+    
+    /* FONTES */
+    --fontfamily-header-footer: 'M PLUS 1', sans-serif;
+    --fontfamily-hp: 'Harry Potter', sans-serif;
+    /* TAMANHOS */
+    --fontsize-header: 1.5em;
+    --fontsize-footer: 1em;
+}
+
 body{
     text-align: center;
 }
-.header, .footer{
-    height: 10vh;
+.header, .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    height: 10vh;
+    font-family: var(--fontfamily-hp);
+    font-size: var(--fontsize-header)
+}
+.footer{
+    font-size: var(--fontsize-footer)
 }
 .main{
-    height: 70vh;
+    font-family: var(--fontfamily-hp);
+    height: 80vh;
 }
