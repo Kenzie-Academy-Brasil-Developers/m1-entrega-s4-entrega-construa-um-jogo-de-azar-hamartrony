@@ -27,8 +27,6 @@ const winningCombinations = [   //array com as combincoes de vitoria -
     [3,5,7],
 ]
 
-
-
 const handleClik = function(event){             //click na celula
     const cell = event.target
     console.log(cell.id);

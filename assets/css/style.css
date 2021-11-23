@@ -16,9 +16,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 90vw;
     height: 10vh;
     font-family: var(--fontfamily-hp);
-    font-size: var(--fontsize-header)
+    font-size: var(--fontsize-header);
+    margin: 0 auto;
+    padding: 30px 0 10px;
 }
 
 /* FOOTER */
@@ -30,37 +33,77 @@
 .main {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     font-family: var(--fontfamily-hp);
+    width: 90vw;
     height: 80vh;
+    margin: 0 auto;
 }
-.main p{
-    margin: 10px;
-}
-
-/* CAÇA PALAVRAS */
-.cacapalavras{
+.objetivo {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
-
-/* IMAGEM LATERAL */
+.objetivo p{
+    text-align: center;
+    line-height: 1.5;
+}
+/* IMAGEM */
+.imagem img {
+    display: flex;
+    width: 50px;
+}
 .imagem figcaption{
     display: none;
 }
 
-/* TABELA */
-.table{
-    border: 10px solid green;
+/* CAÇA PALAVRAS */
+.cacapalavras {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70%;
+}
+.palavras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     margin: 10px;
 }
-.table td{
-    border: 1px solid blue;
-    width: 50px;
-    height: 50px;
+.palavras p{
+    font-family: var(--fontfamily-hp);
+    font-size: 14px;
+}
+/* TABELA */
+.table{
+    font-family: var(--fontfamily-header-footer);
+    border: 2px solid green;
+}
+.table td {
+    width: 30px;
+    height: 30px;
     text-align: center;
+    vertical-align: middle;
+    border: 1px solid blue;
 }
 .table td:hover{
     background-color: orange;
     cursor: pointer;
 }
 
+
+/* MEDIA QUERIES 500px, 800px, 1000px */
+@media screen and (min-width: 500px) {
+    
+}
+
+@media screen and (min-width: 800px) {
+    
+}
+
+@media screen and (min-width: 1000px) {
+    
+}
