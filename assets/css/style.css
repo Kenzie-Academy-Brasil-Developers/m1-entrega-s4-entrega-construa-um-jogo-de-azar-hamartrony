@@ -54,10 +54,7 @@
 }
 
 #musica {
-    width: 100%;
-    padding-left: 10px;
-}
-#musica:hover{
+    width: 20px;
     cursor: url(/assets/img/varinha.cur), auto;
 }
 
@@ -161,10 +158,6 @@
     .objetivo p {
         font-size: 18px;
     } 
-    #musica {
-        position: relative;
-        left: 12%;
-    }
     .footer h3 {
         font-size: 15px;
     }   
@@ -176,20 +169,10 @@
         background-image: url(/assets/img/bg-hp.jpg);
         background-size: cover;
     }
-    /*.objetivo {
 
-    }
-    .objetivo p {
-     
-    }*/
     .footer h3 {
         font-size: 20px;
     }
-    #musica {
-        max-width: 660px;
-    }
-    /* IMAGEM */
-
     /* OBJETIVO */
     .objetivo {
         background-color: var(--slytherin-green);
