@@ -48,7 +48,7 @@
     align-items: center;
     font-family: var(--fontfamily-hp);
     width: 90vw;
-    height: 79vh;
+    height: 80vh;
     margin: 0 auto;
     max-width: 350px;
 }
@@ -150,6 +150,7 @@
     }
     .container{
         background-image: url('/assets/img/another-background.jpg');
+        background-size: cover;
     }
     /*.objetivo{
 
@@ -169,6 +170,7 @@
 @media screen and (min-width: 1000px) {
     .container{
         background-image: url('/assets/img/bg-hp.jpg');
+        background-size: cover;
     }
     /*.objetivo {
 
@@ -180,7 +182,7 @@
         font-size: 20px;
     }
     #musica {
-        max-width: 990px;
+        max-width: 660px;
     }
     /* IMAGEM */
 
