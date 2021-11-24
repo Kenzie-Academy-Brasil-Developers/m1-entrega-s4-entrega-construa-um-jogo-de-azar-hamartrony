@@ -14,7 +14,7 @@
 }
 
 .container{
-    background-image: url('../assests/img/hp-animated(1).jpg');
+    background-image: url('../img/hp-animated(1).jpg');
     background-size: cover;
 }
 
@@ -55,7 +55,7 @@
 
 #musica {
     width: 20px;
-    cursor: url('../assets/img/varinha.cur'), auto;
+    cursor: url('../img/varinha.cur'), auto;
 }
 
 .objetivo {
@@ -132,7 +132,7 @@
     text-align: center;
     vertical-align: middle;
     border: 1px solid var(--gryffindor-yellow);
-    cursor: url('../assets/img/varinha.cur'), auto;
+    cursor: url('../img/varinha.cur'), auto;
 }
 .table td:hover{
     background-color: orange;
@@ -149,7 +149,7 @@
         max-width: 1000px;
     }
     .container{
-        background-image: url('../assets/img/another-background.jpg');
+        background-image: url('../img/another-background.jpg');
         background-size: cover;
     }
     /*.objetivo{
