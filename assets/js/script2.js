@@ -61,3 +61,6 @@ const main = (evt) => {
     showResult(vencedor)
     
 }
+
+const buttons = document.querySelectorAll('img')
+buttons.forEach((img) => img.addEventListener('click', main))

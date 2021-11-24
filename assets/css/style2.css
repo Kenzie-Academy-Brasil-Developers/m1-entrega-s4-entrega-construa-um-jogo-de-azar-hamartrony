@@ -1,9 +1,52 @@
+:root{
+    /* FONTES */
+    --fontfamily-hp: 'Harry Potter', sans-serif;
+    /* CORES */
+
+    /* TAMANHOS */
+}
+
+/* CONTAINER */
+.container{
+    background-image: url(/assets/img/bg-castle.png);
+    background-size: cover;
+    font-family: var(--fontfamily-hp);
+    color: white;
+}
+
+/* HEADER */
+.header, .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 10vh;
+}
+
+/* MAIN */
 .main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    height: 100vh;
-    width: 60vw;
+    height: 80vh;
+    width: 100vw;
+}
+
+.main__img img{
+    width: 40px;
+    margin: 20px;
+}
+.main__results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main__results span{
+    margin: 10px;
+}
+.main__results div{
+    margin: 10px;
 }
