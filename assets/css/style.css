@@ -166,7 +166,7 @@
 /* MEDIA QUERY 1000PX */
 @media screen and (min-width: 1000px) {
     .container{
-        background-image: url('https://github.com/Kenzie-Academy-Brasil-Developers/m1-entrega-s4-entrega-construa-um-jogo-de-azar-hamartrony/blob/main/assets/img/bg-hp.jpg');
+        background-image: url('../img/bg-hp.jpg');
         background-size: cover;
     }
 
