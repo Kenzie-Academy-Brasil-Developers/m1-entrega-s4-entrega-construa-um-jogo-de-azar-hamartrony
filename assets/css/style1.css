@@ -48,14 +48,13 @@
     align-items: center;
     font-family: var(--fontfamily-hp);
     width: 90vw;
-    height: 79vh;
+    height: 80vh;
     margin: 0 auto;
     max-width: 350px;
 }
 
 #musica {
-    width: 100%;
-    padding-left: 10px;
+    width: 20px;
 }
 
 .objetivo {
@@ -75,6 +74,9 @@
     text-align: center;
     line-height: 1.5;
     font-size: 10px;
+}
+.objetivo p:nth-child(2){
+    border-right: 2px dotted var(--gryffindor-yellow);
 }
 .objetivo p:nth-child(3){
     display: none;
@@ -151,16 +153,9 @@
     .container{
         background-image: url('/assets/img/another-background.jpg');
     }
-    .objetivo{
-
-    }
     .objetivo p {
         font-size: 18px;
     } 
-    #musica {
-        position: relative;
-        left: 12%;
-    }
     .footer h3 {
         font-size: 15px;
     }   
@@ -170,30 +165,25 @@
     .container{
         background-image: url(/assets/img/bg-hp.jpg);
     }
-    .objetivo {
-
-    }
-    .objetivo p {
-     
-    }
     .footer h3 {
         font-size: 20px;
     }
     #musica {
         max-width: 990px;
     }
-    /* IMAGEM */
 
     /* OBJETIVO */
     .objetivo {
         background-color: var(--slytherin-green);
         border: 2px dotted var(--slytherin-gray);
+        width: 70vw;
     }
     .objetivo p:nth-child(2){
         display: none;
     }
-    .objetivo p:nth-child(3){
+    .objetivo p:nth-child(3) {
         display: unset;
+        border-right: 2px dotted var(--slytherin-gray);
     }
     .imagem figure:nth-child(1){
         display: none;
@@ -210,6 +200,8 @@
         border: 2px solid var(--slytherin-green);
     }
     .table td {
+        width: 35px;
+        height: 35px;
         border: 1px solid var(--slytherin-gray);
     }
     .table td:hover{
