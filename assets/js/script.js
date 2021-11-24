@@ -39,6 +39,13 @@ const coluna = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91];
 const colunaramdom = coluna[aleatorio1a10()];
 
 
+    // TESTE DE HOVER FIXO
+
+        cells.style.background = 'green';
+        cells.style.color = "red";
+        
+
+
 //JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
     let j = 0;
@@ -79,7 +86,8 @@ console.log(arrayPalavraAleatoriaInserida2)
 for (let i=0; i<=10; i++){
     for (let j = 0; j<=10; j++){
 if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j] || arrayPalavraAleatoriaInserida[i] == undefined || arrayPalavraAleatoriaInserida2[i] == undefined ){
-        console.log("teste")
+    location.reload();
+
        }}
     }
 //FUNÇÃO QUE CAPTURA O ID DAS LETRAS
