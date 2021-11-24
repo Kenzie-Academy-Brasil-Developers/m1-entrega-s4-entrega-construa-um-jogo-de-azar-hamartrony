@@ -110,7 +110,14 @@ for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', validacaoDeDados);  
 }
 
+const palavraGerida1 = document.getElementById('palavra1');
+palavraGerida1.innerText = palavra;
 
+const palavraGerida2 = document.getElementById('palavra2');
+palavraGerida1.innerText = palavra2;
+
+const palavraGerida3 = document.getElementById('palavra3');
+palavraGerida1.innerText = palavra3;
   
 
 
