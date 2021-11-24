@@ -56,7 +56,7 @@ const showChoices = (player,pc) => {
 const main = (evt) => {
     let playerPlay = evt.target.id
     let pcPlay = jogadaPC()
-    let winner = quemVenceu(playerPlay, pcPlay)
+    let vencedor = quemVenceu(playerPlay, pcPlay)
     showChoices(playerPlay, pcPlay)
     showResult(vencedor)
     
