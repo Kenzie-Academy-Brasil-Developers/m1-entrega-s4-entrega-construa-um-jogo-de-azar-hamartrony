@@ -55,11 +55,13 @@ img {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     margin: 0 auto;
+    
 }
 
 .main__img img{
     width: 40px;
     margin: 20px;
+    cursor: url('../img/varinha.cur'), auto;
 }
 .main__results {
     display: flex;
@@ -72,6 +74,10 @@ img {
 }
 .main__results div{
     margin: 10px;
+}
+
+#musica {
+    cursor: url('../img/varinha.cur'), auto;
 }
 
 @media screen and (min-width: 1000px) {
