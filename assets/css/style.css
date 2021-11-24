@@ -151,9 +151,9 @@
     .container{
         background-image: url('/assets/img/another-background.jpg');
     }
-    .objetivo{
+    /*.objetivo{
 
-    }
+    }*/
     .objetivo p {
         font-size: 18px;
     } 
@@ -170,12 +170,12 @@
     .container{
         background-image: url(/assets/img/bg-hp.jpg);
     }
-    .objetivo {
+    /*.objetivo {
 
     }
     .objetivo p {
      
-    }
+    }*/
     .footer h3 {
         font-size: 20px;
     }
