@@ -10,12 +10,13 @@ function geradorDeLetra(){
     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
 }
 //FUNÇÃO QUE ESCOLHE 1 PALAVRA ALEATORIA DENTRO DO ARRAY DE PALAVRAS 
-let result = [];
+
     function geradorDePalavra(){
+    let result = [];
     for(let i = 0; i < 1; i++){
     result.push(palavras[aleatorio0a19()])
     }
-    return result.join(" ")
+    return result.join("")
 }
 //FUNÇÃO QUE ADICIONA AS LETRAS ALEATORIAS NA TABELA
 function adicionaLetras(){
@@ -26,7 +27,7 @@ function adicionaLetras(){
 adicionaLetras()
 //FUNÇÃO QUE DEVOLVE UM NUMERO ALEATORIO DE 0 A 10
 function aleatorio1a10() {
-let ramdom =  Math.floor(Math.random(0, 9)* 9 + 1);   
+let ramdom =  Math.floor(Math.random(1, 10)* 10 + 1);   
     return ramdom;
 }
 //FUNÇÃO QUE DEVOLVE UM NUMERO ALEATORIO DE 0 19
@@ -36,6 +37,8 @@ function aleatorio0a19() {
 //ESCOLHE UMA COLUNA DENTRO DO ARRAY DE COLUNAS
 const coluna = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91];
 const colunaramdom = coluna[aleatorio1a10()];
+
+
 //JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
     let j = 0;
@@ -48,27 +51,37 @@ const palavra = geradorDePalavra();
     }else{
         cells[i].innerText = palavra[j];
         console.log(palavra[j]);
-        console.log(arrayPalavraAleatoriaInserida)
-
         arrayPalavraAleatoriaInserida.push(cells[i].id)    
         j+=1;
     }
+    
 }
+
 //JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
-const palavra2 = geradorDePalavra();
+let palavra2 = geradorDePalavra();
+     j = 0;
 let arrayPalavraAleatoriaInserida2 = []
     for (let i = colunaramdom; i<cells.length; i++){        
 
     if ( palavra2[j] === undefined){
-        cells[i].innerText = geradorDeLetra()
+        break;
     }else{
         cells[i].innerText = palavra2[j];
         console.log(palavra2[j]);
-        j+=1;
         arrayPalavraAleatoriaInserida2.push(cells[i].id)    
-        console.log(arrayPalavraAleatoriaInserida2)
+        j+=1;
     }
+    
 }
+//FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
+console.log(arrayPalavraAleatoriaInserida)
+console.log(arrayPalavraAleatoriaInserida2)
+for (let i=0; i<=10; i++){
+    for (let j = 0; j<=10; j++){
+if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j] || arrayPalavraAleatoriaInserida[i] == undefined || arrayPalavraAleatoriaInserida2[i] == undefined ){
+        console.log("teste")
+       }}
+    }
 //FUNÇÃO QUE CAPTURA O ID DAS LETRAS
 function ClickTabela(){
     const cell = event.target.id;
