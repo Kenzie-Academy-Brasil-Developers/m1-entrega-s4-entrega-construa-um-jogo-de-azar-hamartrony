@@ -43,11 +43,11 @@ const showResult = (vencedor) => {
     spanResult.innerText = `O vencedor é: ${vencedor}`;
 }
 
-const showChoices = (player,pc) => {
+const showChoices = (jogador,pc) => {
     const playerSpan = document.getElementById('playerChoice');
     const pcSpan = document.getElementById ('pcChoice');
 
-    playerSpan.innerText = `Jogador: ${player}`;
+    playerSpan.innerText = `Jogador: ${jogador}`;
     pcSpan.innerText = `Computador: ${pc}`;
 }
 
@@ -56,7 +56,7 @@ const showChoices = (player,pc) => {
 const main = (evt) => {
     let playerPlay = evt.target.id
     let pcPlay = jogadaPC()
-    let winner = quemVenceu(playerPlay, pcPlay)
+    let vencedor = quemVenceu(playerPlay, pcPlay)
     showChoices(playerPlay, pcPlay)
     showResult(vencedor)
     
