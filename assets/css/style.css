@@ -14,7 +14,7 @@
 }
 
 .container{
-    background-image: url(/assets/img/hp-animated\(1\).jpg);
+    background-image: url(hp-animated(1).jpg);
     background-size: cover;
 }
 
@@ -149,7 +149,7 @@
         max-width: 1000px;
     }
     .container{
-        background-image: url(/assets/img/another-background.jpg);
+        background-image: url(another-background.jpg);
         background-size: cover;
     }
     /*.objetivo{
@@ -166,7 +166,7 @@
 /* MEDIA QUERY 1000PX */
 @media screen and (min-width: 1000px) {
     .container{
-        background-image: url(/assets/img/bg-hp.jpg);
+        background-image: url(bg-hp.jpg);
         background-size: cover;
     }
 
