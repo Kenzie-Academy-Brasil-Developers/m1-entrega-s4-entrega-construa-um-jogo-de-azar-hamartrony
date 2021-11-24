@@ -10,11 +10,24 @@
 
 /* CONTAINER */
 .container{
+<<<<<<< HEAD
     background-image: url("../img/bg-castle.png");
     background-size: cover;
     font-family: var(--fontfamily-hp);
     color: white;
     /* padding: 35px 0; */
+=======
+    background-image: url('../img/bg-castle.png');
+    background-size: cover;
+    font-family: var(--fontfamily-hp);
+    color: white;
+    
+}
+
+img {
+
+
+>>>>>>> origin/feature-jogo2-beta
 }
 
 /* HEADER */
@@ -24,8 +37,20 @@
     justify-content: center;
     flex-direction: row;
     height: 10vh;
-    font-size: var(--fontsize-header);
+    
 }
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    font-size: 30px;
+}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/feature-jogo2-beta
 .footer{
     font-size: var(--fontsize-footer);
 }
@@ -41,11 +66,13 @@
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     margin: 0 auto;
+    
 }
 
 .main__img img{
     width: 40px;
     margin: 20px;
+    cursor: url('../img/varinha.cur'), auto;
 }
 .main__results {
     display: flex;
@@ -58,4 +85,14 @@
 }
 .main__results div{
     margin: 10px;
+}
+
+#musica {
+    cursor: url('../img/varinha.cur'), auto;
+}
+
+@media screen and (min-width: 1000px) {
+.main__img img {
+ width: 110px;   
+}
 }
