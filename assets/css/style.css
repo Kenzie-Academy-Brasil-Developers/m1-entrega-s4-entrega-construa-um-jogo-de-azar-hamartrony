@@ -1,0 +1,15 @@
+table{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: var(--fontfamily-header-footer);
+    border: 2px solid var(--gryffindor-red);
+}
+table td {
+    width: 30px;
+    height: 30px;
+    font-weight: bolder;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid var(--gryffindor-yellow);
+    cursor: url(/assets/img/varinha.cur),auto;
+}
