@@ -176,7 +176,11 @@
     .objetivo {
         background-color: var(--slytherin-green);
         border: 2px dotted var(--slytherin-gray);
-        width: 70vw;
+        width: 50vw;
+    }
+    .objetivo p{
+        font-size: 15px;
+        padding: 3px;
     }
     .objetivo p:nth-child(2){
         display: none;
