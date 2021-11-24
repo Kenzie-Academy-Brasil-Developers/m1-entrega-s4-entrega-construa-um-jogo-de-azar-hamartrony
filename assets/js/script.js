@@ -2,13 +2,14 @@
 const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
 'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
 'cornival','harry','hermione','minerva','neville','edwiges']
- 
+//ADICIONADO TODAS AS ALTERAÇÕES A TABLEA
+const cells = document.querySelectorAll('td');
 //GERADOR DE LETRAS ALEATORIAS NA TABELA
 function geradorDeLetra(){
     const alfabeto = "abcdefghijklmnopqrstuvwxyz"
     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
 }
-//FUNÇÃO QUE ESCOLHE 1 PALAVRAS ALEATORIAS DENTRO DO ARRAY DE PALAVRAS 
+//FUNÇÃO QUE ESCOLHE 1 PALAVRA ALEATORIA DENTRO DO ARRAY DE PALAVRAS 
 let result = [];
     function geradorDePalavra(){
     for(let i = 0; i < 1; i++){
@@ -16,128 +17,60 @@ let result = [];
     }
     return result.join(" ")
 }
-
-    const cells = document.querySelectorAll('td');
-    for (let i=0; i<cells.length; i++ ){
-    
-      
-        cells[i].innerText = geradorDeLetra()
-    
+//FUNÇÃO QUE ADICIONA AS LETRAS ALEATORIAS NA TABELA
+function adicionaLetras(){
+    for (let i=0; i<cells.length; i++ ){  
+    cells[i].innerText = geradorDeLetra()
     }
-
-//FUNÇÃO QUE JOGA A PALAVRA EM UMA POSIÇÃO ALEATORIA NA TABELA
+}
+adicionaLetras()
+//FUNÇÃO QUE DEVOLVE UM NUMERO ALEATORIO DE 1 A 10
 function aleatorio1a10() {
     return Math.floor(Math.random()* 10 + 1);   
 }
-
+//FUNÇÃO QUE DEVOLVE UM NUMERO ALEATORIO DE 0 19
 function aleatorio0a19() {
     return Math.floor(Math.random()* 19 + 1);   
 }
 //FUNÇÃO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
-let j = 0;
-let arrayPalavraAleatoriaInserida = []
-let arrayLetraClicada = []
-
-for (let i = aleatorio1a10(); i<cells.length; i+=10){
-    //continuar o array de id para selecionar a posicao de onde a palavra foi inserida
-    //console.log(cells[i].id)    
-        
+    let j = 0;
+    let arrayPalavraAleatoriaInserida = []
+    let arrayLetraClicada = []
+    for (let i = aleatorio1a10(); i<cells.length; i+=10){        
     if ( palavra[j] === undefined){
         cells[i].innerText = geradorDeLetra()
     }else{
         cells[i].innerText = palavra[j];
         j+=1;
-        arrayPalavraAleatoriaInserida.push(cells[i].id)
-        console.log(arrayPalavraAleatoriaInserida)       
+        arrayPalavraAleatoriaInserida.push(cells[i].id)    
     }
-
 }
-
-  
-  
-  
-    
-
-  
-
-
-
-
-
-//AS FUNÇÕES ABAIXO ESTÃO EM OBSERVAÇÃO AINDA
-
-//FUNÇÃO QUE ADICIONA LETRAS GERADAS NA TABELA
-const handleClik = function(event){
-    const cell = event.target.id
-    arrayLetraClicada.push(cell)
-    console.log(arrayLetraClicada)
-
-
+//FUNÇÃO QUE CAPTURA O ID DAS LETRAS
+function ClickTabela(){
+    const cell = event.target.id;
+    arrayLetraClicada.push(cell);
+}
+//FUNÇÃO QUE VERIFICA A VITORIA
+function validacaoDeDados(){
     if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
-    if (string1 == string2){
-        alert("VENCEMO!");
-    } }
-
-  
-
-   
-    
-    if (arrayPalavraAleatoriaInserida.length < arrayLetraClicada.length){
-        alert("Errou a frase!");
-        arrayLetraClicada = [];
-        
+        if (string1 == string2){
+            alert("Acertou a frase!");
+        }else{
+            alert("Errou a frase!");
+            arrayLetraClicada = [];
+        }
     }
-
-
-   
 }
-   
-
+//EVENTOS DE CLICK SENDO ESPERADOS
 for (let i=0; i<cells.length; i++ ){
-    cells[i].addEventListener('click', handleClik);
-    
+    cells[i].addEventListener('click', ClickTabela);
+    cells[i].addEventListener('click', validacaoDeDados);  
 }
 
 
   
 
 
-
-
- //TESTE DE APLICAÇÃO A ID PARA A PALAVRA CORRETA
- function catchs(){
-
-    const a = document.getElementById("a")
-    const m = document.getElementById("m")
-    const o = document.getElementById("o")
-    const r = document.getElementById("r")
-
-    a.addEventListener('click', tester)
-    m.addEventListener('click', tester)
-    o.addEventListener('click', tester)
-    r.addEventListener('click', tester)
-
-}
-
-//FUNÇÃO QUE TESTA SE ÁS LETRAS SELECIONADAS SÃO UMA PALAVRA DO ARRAY DE PALAVRA
-let arrcreated = [];
-function tester(){
-
-    const arright = "amor";
-    let strcreated;
-    const events = event.target.id;
-    arrcreated.push(events);
-
-    if (arrcreated.length == arright.length){
-        strcreated = arrcreated.join("");
-    }else if (arrcreated.length > arright.length){
-        arrcreated = [];
-
-    }
-    if ( strcreated  == arright){
-        alert("correto!")
-    }
-}
