@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(/assets/img/bg-05.jpg);
+    background-image: url("../img/bg-05.jpg");
     background-size: cover;
     color: white;
     font-family: var(--fontfamily-hp);

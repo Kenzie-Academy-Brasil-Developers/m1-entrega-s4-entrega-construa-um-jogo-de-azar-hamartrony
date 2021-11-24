@@ -14,7 +14,7 @@
 }
 
 .container{
-    background-image: url('/assets/img/hp-animated(1).jpg');
+    background-image: url("../img/hp-animated(1).jpg");
     background-size: cover;
 }
 
@@ -134,11 +134,11 @@
     text-align: center;
     vertical-align: middle;
     border: 1px solid var(--gryffindor-yellow);
-    cursor: url(/assets/img/varinha.cur),auto;
+    cursor: url("../img/varinha.cur"),auto;
 }
 .table td:hover{
     background-color: orange;
-    cursor: url(/assets/img/varinha.cur),auto;
+    cursor: url("../img/varinha.cur"),auto;
     
 }
 .footer h3 {
@@ -151,7 +151,7 @@
         max-width: 1000px;
     }
     .container{
-        background-image: url('/assets/img/another-background.jpg');
+        background-image: url('../img/another-background.jpg');
     }
     .objetivo p {
         font-size: 18px;
@@ -163,7 +163,7 @@
 
 @media screen and (min-width: 1000px) {
     .container{
-        background-image: url(/assets/img/bg-hp.jpg);
+        background-image: url("../img/bg-hp.jpg");
     }
     .footer h3 {
         font-size: 20px;

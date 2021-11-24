@@ -52,7 +52,7 @@
 .main__img img{
     width: 40px;
     margin: 20px;
-    cursor: url('../img/varinha.cur'), auto;
+    cursor: url("../img/varinha.cur"), auto;
 }
 .main__results {
     display: flex;
@@ -68,7 +68,7 @@
 }
 
 #musica {
-    cursor: url('../img/varinha.cur'), auto;
+    cursor: url("../img/varinha.cur"), auto;
 }
 
 @media screen and (min-width: 1000px) {
