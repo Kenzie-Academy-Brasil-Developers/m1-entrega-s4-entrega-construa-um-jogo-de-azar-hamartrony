@@ -168,7 +168,7 @@
 
 @media screen and (min-width: 1000px) {
     .container{
-        background-image: url(./assets/img/bg-hp.jpg);
+        background-image: url(/assets/img/bg-hp.jpg);
     }
     /*.objetivo {
 
