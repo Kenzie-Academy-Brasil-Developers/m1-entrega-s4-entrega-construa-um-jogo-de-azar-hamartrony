@@ -54,6 +54,11 @@
     margin: 20px;
     cursor: url("../img/varinha.cur"), auto;
 }
+
+.main__img img:active{
+    transform: translateY(5px);
+}
+
 .main__results {
     display: flex;
     flex-direction: column;
