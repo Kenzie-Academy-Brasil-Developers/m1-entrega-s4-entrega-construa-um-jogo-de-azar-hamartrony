@@ -136,7 +136,7 @@
 }
 .table td:hover{
     background-color: orange;
-    cursor: url('../assets/img/varinha.cur'), auto;
+    cursor: url('../img/varinha.cur'), auto;
     
 }
 .footer h3 {
