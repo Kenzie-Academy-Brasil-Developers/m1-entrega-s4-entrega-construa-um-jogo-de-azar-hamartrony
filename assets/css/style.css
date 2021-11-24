@@ -14,7 +14,7 @@
 }
 
 .container{
-    background-image: url('/assets/img/hp-animated(1).jpg');
+    background-image: url(/assets/img/hp-animated\(1\).jpg);
     background-size: cover;
 }
 
@@ -56,6 +56,9 @@
 #musica {
     width: 100%;
     padding-left: 10px;
+}
+#musica:hover{
+    cursor: url(/assets/img/varinha.cur), auto;
 }
 
 .objetivo {
@@ -132,24 +135,24 @@
     text-align: center;
     vertical-align: middle;
     border: 1px solid var(--gryffindor-yellow);
-    cursor: url('/assets/img/varinha.cur'),auto;
+    cursor: url(/assets/img/varinha.cur), auto;
 }
 .table td:hover{
     background-color: orange;
-    cursor: url('/assets/img/varinha.cur'),auto;
+    cursor: url(/assets/img/varinha.cur), auto;
     
 }
 .footer h3 {
     font-size: 11px;
 }
 
-/* MEDIA QUERIES 500px, 800px, 1000px */
+/* MEDIA QUERY 800PX */
 @media screen and (min-width: 800px) {
     .main {
         max-width: 1000px;
     }
     .container{
-        background-image: url('/assets/img/another-background.jpg');
+        background-image: url(/assets/img/another-background.jpg);
         background-size: cover;
     }
     /*.objetivo{
@@ -167,9 +170,10 @@
     }   
 }
 
+/* MEDIA QUERY 1000PX */
 @media screen and (min-width: 1000px) {
     .container{
-        background-image: url('/assets/img/bg-hp.jpg');
+        background-image: url(/assets/img/bg-hp.jpg);
         background-size: cover;
     }
     /*.objetivo {
