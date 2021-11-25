@@ -1,7 +1,7 @@
 .blue{ background-color: blue; } .green{ background-color: green; } .red{ background-color: red; }
 :root{
     /* CORES */
-    --slytherin-green: #0d6217;
+    --slytherin-green: rgb(13, 98, 23);
     --slytherin-gray: #aaaaaa;
     --gryffindor-red: rgba(127, 9, 9, 0.9);
     --gryffindor-yellow: rgba(255, 197, 0);
@@ -139,7 +139,6 @@
 .table td:hover{
     background-color: orange;
     cursor: url("../img/varinha.cur"),auto;
-    
 }
 .footer h3 {
     font-size: 11px;

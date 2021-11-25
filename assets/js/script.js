@@ -1,19 +1,19 @@
 //ARRAY DE PALAVRAS DO JOGO
-const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
-'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
-'cornival','harry','minerva','neville','edwiges']
+const palavras = ['COMENSAL','HERMIONE','SONSERINA','AZKABAN','HORCRUX','NIMBUS',
+'DOBBY', 'HAGRID', 'POTTER','MALFOY','RONALD','DRACO', 'SEVERUS', 'SIRIUS',
+'CORVINAL','HARRY','MINERVA','NEVILLE','EDWIGES']
 //ADICIONADO TODAS AS ALTERAÇÕES A TABLEA
-const cells = document.querySelectorAll('td');
+const cells = document.querySelectorAll('td')
 //GERADOR DE LETRAS ALEATORIAS NA TABELA
 function geradorDeLetra(){
-    const alfabeto = "abcdefghijklmnopqrstuvwxyz"
-    return alfabeto[Math.floor(Math.random() * alfabeto.length)]
+    const alfabeto = "ABCDEFGHIJKLMNOPQRSTU";
+    return alfabeto[Math.floor(Math.random() * alfabeto.length)];
 }
 //FUNÇÃO QUE ESCOLHE 1 PALAVRA ALEATORIA DENTRO DO ARRAY DE PALAVRAS 
 function geradorDePalavra(){
     let result = [];
     for(let i = 0; i < 1; i++){
-    result.push(palavras[aleatorio0a19()])
+        result.push(palavras[aleatorio0a19()])
     }
     return result.join("")
 }
