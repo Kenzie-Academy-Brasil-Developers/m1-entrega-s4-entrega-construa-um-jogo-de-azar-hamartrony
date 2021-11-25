@@ -58,8 +58,10 @@ function validacaoDeDados(){
         let string2 = arrayPalavraAleatoriaInserida.join("");
         if (string1 == string2){
             alert("Acertou a frase!");
+        
         }else{
             alert("Errou a frase!");
+          
             arrayLetraClicada = [];
         }
     }
@@ -76,8 +78,7 @@ for (let i=0; i<cells.length; i++ ){
        
 });
 function color(){
-    console.log("teste")
-    cells[i].classList = "red";
+    cells[i].classList = "blue";
 }
 }
 //ADICIONANDO MUSICA A PAGINA
