@@ -119,8 +119,8 @@ function ClickTabela(){
 }
 //FUNÇÃO QUE VERIFICA A VITORIA
 function validacaoDeDados(){
-    if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
-        let string1 = arrayLetraClicada.join("");
+  
+       
         let string2 = arrayPalavraAleatoriaInserida.join("");
         
         if (string1 == string2){
@@ -130,8 +130,8 @@ function validacaoDeDados(){
             alert("Errou a frase!");
             arrayLetraClicada = [];
         }
-    }
-    if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
+    
+
         let string1 = arrayLetraClicada.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
         console.log(string1)
@@ -144,7 +144,7 @@ function validacaoDeDados(){
             alert("Errou a frase!");
             arrayLetraClicada = [];
         }
-    }
+    
     
 }
 //EVENTOS DE CLICK SENDO ESPERADOS
@@ -185,6 +185,12 @@ function click(){
          }else{pause();}
 });
 
+//MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
+const p1 = document.getElementById("palavra")
+const p2 = document.getElementById("palavra2")
+
+p1.innerText = palavra
+p2.innerText = palavra2
 
   
 
