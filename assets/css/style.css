@@ -1,216 +1,87 @@
-.blue{
-    background-color: blue;
-}
-.green{
-    background-color: green;
-}
-.red{
-    background-color: red;
-}
+/* VARIAVEIS */
 :root{
-    /* CORES */
-    --slytherin-green: #0d6217;
-    --slytherin-gray: #aaaaaa;
-    --gryffindor-red: rgba(127, 9, 9, 0.9);
-    --gryffindor-yellow: rgba(255, 197, 0);
     /* FONTES */
-    --fontfamily-header-footer: 'M PLUS 1', sans-serif;
     --fontfamily-hp: 'Harry Potter', sans-serif;
     /* TAMANHOS */
-    --fontsize-header: 1.5em;
-    --fontsize-footer: 1em;
+    /* CORES */
+    --ravenclaw-yellow: rgba(148, 107, 45, 0.6);
+    --ravenclaw-blue: rgba(0, 10, 144, 0.6);
 }
 
-.container{
-    background-image: url('../img/hp-animated(1).jpg');
+/* CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../img/bg-05.jpg");
     background-size: cover;
+    color: white;
+    font-family: var(--fontfamily-hp);
 }
 
 /* HEADER */
 .header, .footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    width: 90vw;
-    height: 10vh;
-    font-family: var(--fontfamily-hp);
-    font-size: var(--fontsize-header);
-    color: white;
-    margin: 0 auto;
-    padding: 30px 0 10px;
+    height: 20vh;
 }
 
-/* FOOTER */
-.footer{
-    font-size: var(--fontsize-footer);
-    line-height: 1.6;
+.header h1, .footer h3{
+    background-color: var(--ravenclaw-yellow);
+    padding: 10px;
+    border-radius: 15px;
 }
 
 /* MAIN */
 .main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
-    align-items: center;
-    font-family: var(--fontfamily-hp);
-    width: 90vw;
-    height: 80vh;
-    margin: 0 auto;
-    max-width: 350px;
-}
-
-#musica {
-    width: 20px;
-    cursor: url('../img/varinha.cur'), auto;
-}
-
-.objetivo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--gryffindor-red);
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px dotted var(--gryffindor-yellow);
+    width: 80vw;
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
-    height: 107px;
 }
-.objetivo p{
-    color: white;
-    text-align: center;
-    line-height: 1.5;
-    font-size: 10px;
-}
-.objetivo p:nth-child(3){
-    display: none;
-}
-.imagem figure:nth-child(2){
-    display: none;
-}
-
 /* IMAGEM */
-.imagem img {
-    display: flex;
-    width: 50px;
-    border-radius: 15px;
-}
-.imagem figure:nth-child(2){
-    display: none;
-}
-.imagem figcaption{
-    display: none;
-}
-
-/* CAÇA PALAVRAS */
-.cacapalavras {
+.main a {
     display: flex;
     flex-direction: column;
-    height: 70%;
+    align-items: center;
+    text-decoration: none;
 }
-.palavras{
+.main a:active{
+    color: var(--ravenclaw-blue);
+}
+.main a:visited{
+    color: var(--ravenclaw-yellow);
+}
+.main figure {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: var(--gryffindor-red);
-    margin: 10px;
-    padding: 5px;
-    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
-.palavras p{
-    font-family: var(--fontfamily-hp);
-    font-size: 14px;
-    color: white;
-    padding: 10px 0 0;
+.main img{
+    width: 50%;
+    margin: 20px;
 }
 
-/* TABELA */
-.table{
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-family: var(--fontfamily-header-footer);
-    border: 2px solid var(--gryffindor-red);
-}
-.table td {
-    width: 30px;
-    height: 30px;
-    font-weight: bolder;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid var(--gryffindor-yellow);
-    cursor: url('../img/varinha.cur'), auto;
-}
-.table td:hover{
-    background-color: orange;
-    cursor: url('../img/varinha.cur'), auto;
-    
-}
-.footer h3 {
-    font-size: 11px;
-}
-
-/* MEDIA QUERY 800PX */
-@media screen and (min-width: 800px) {
-    .main {
-        max-width: 1000px;
-    }
-    .container{
-        background-image: url('../img/another-background.jpg');
-        background-size: cover;
-    }
-    /*.objetivo{
-
-    }*/
-    .objetivo p {
-        font-size: 18px;
-    } 
-    .footer h3 {
-        font-size: 15px;
-    }   
-}
-
-/* MEDIA QUERY 1000PX */
-@media screen and (min-width: 1000px) {
-    .container{
-        background-image: url('../img/bg-hp.jpg');
-        background-size: cover;
-    }
-
-    .footer h3 {
-        font-size: 20px;
-    }
-    /* OBJETIVO */
-    .objetivo {
-        background-color: var(--slytherin-green);
-        border: 2px dotted var(--slytherin-gray);
-    }
-    .objetivo p:nth-child(2){
-        display: none;
-    }
-    .objetivo p:nth-child(3){
-        display: unset;
-    }
-    .imagem figure:nth-child(1){
-        display: none;
-    }
-    .imagem figure:nth-child(2){
-        display: unset;
-    }
-    /* PALAVRAS */
-    .palavras{
-        background-color: var(--slytherin-green);
-    }
-    /* TABLE */
-    .table{
-        border: 2px solid var(--slytherin-green);
-    }
-    .table td {
-        border: 1px solid var(--slytherin-gray);
-    }
-    .table td:hover{
-        background-color: var(--slytherin-green);
+/* BREAKPOINTS */
+@media screen and (min-width: 375px) {
+    .main img{
+        width: 40%;
     }
 }
 
+@media screen and (min-width: 768px) {
+    .main{
+        display: flex;
+        flex-direction: row;
+    }
+    .main img{
+        width: 60%;
+    }
+}
