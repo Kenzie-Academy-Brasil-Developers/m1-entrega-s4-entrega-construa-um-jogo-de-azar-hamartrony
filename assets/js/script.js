@@ -105,7 +105,7 @@ function colisao(){
   for (let i=0; i<maior.length; i++){
      for (let j = 0; j<maior.length; j++){
      if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] 
-        || palavra == palavra2 || palavra == "" || palavra2 == "" || palavra3 == ""){
+        || palavra == palavra2 || palavra == "" || palavra2 == ""){
       
     location.reload();
 }
@@ -119,12 +119,9 @@ function ClickTabela(){
 }
 //FUNÇÃO QUE VERIFICA A VITORIA
 function validacaoDeDados(){
-  
-    let string1 = arrayLetraClicada.join("");
+    if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
+        let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
-        console.log(string1)
-        console.log(string2)
-        console.log(string3)
         
         if (string1 == string2){
             alert("Acertou a frase!");
@@ -133,9 +130,9 @@ function validacaoDeDados(){
             alert("Errou a frase!");
             arrayLetraClicada = [];
         }
-    
-
-     
+    }
+    if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
+        let string1 = arrayLetraClicada.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
         console.log(string1)
         console.log(string3)
@@ -147,59 +144,16 @@ function validacaoDeDados(){
             alert("Errou a frase!");
             arrayLetraClicada = [];
         }
-    
+    }
     
 }
 //EVENTOS DE CLICK SENDO ESPERADOS
 for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
     cells[i].addEventListener('click', validacaoDeDados);  
-    cells[i].addEventListener('click', color);  
-    cells[i].addEventListener('click', function(){
-        if(clicks){
-            click();
-        }
-       
-});
-function color(){
-    cells[i].classList = "blue";
 }
-}
-//ADICIONANDO MUSICA A PAGINA
-const clicks = document.getElementById('click');
-const player = document.getElementById('audio');
 
-const button = document.getElementById('musica');
-function play() {
-    player.play();
-   
-   
-    
-}
-function click(){
-    clicks.play();
-}
- function pause() {
-    player.pause();
- }
-  button.addEventListener('click', function(){
-         if(player.paused){
-             play();
-         }else{pause();}
-});
-
-//MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
-const p1 = document.getElementById("palavra")
-const p2 = document.getElementById("palavra2")
-const reset = document.getElementById("reset")
-p1.innerText = palavra
-p2.innerText = palavra2
-
-reset.addEventListener('click', resets)
-
-function resets(){
-    location.reload();
-}
 
   
+
 
