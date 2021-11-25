@@ -47,7 +47,7 @@ function vertical(){
            break;
         }else{
             cells[i].innerText = palavra[j];
-            console.log(palavra[j]);
+     
             arrayPalavraAleatoriaInserida.push(cells[i].id)    
             j+=1;
         }
@@ -63,30 +63,33 @@ function horizontal1(){
             break;
         }else{
             cells[i].innerText = palavra2[j];
-            console.log(palavra2[j]);
+      
             arrayPalavraAleatoriaInserida2.push(cells[i].id)    
             j+=1;
         }
     }
 }
 //FUNCAO QUE JOGA A TERCEIRA PALAVRA DE FORMA HORIZONTAL
-//let palavra3 = geradorDePalavra();
-//let arrayPalavraAleatoriaInserida3 = []
-//function horizontal2(){
-//    j = 0;
-//    for (let i = colunaramdom; i<cells.length; i++){        
-//        if ( palavra3[j] === undefined){
-//            break;
-//        }else{
-//            cells[i].innerText = palavra3[j];
-//            console.log(palavra3[j]);
-//            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
-//            j+=1;
-//        }
-//    }
-//}
+const coluna2 = [2, 12, 22, 32, 42, 52, 62, 72, 82, 92];
+const colunarandom2 = coluna2[aleatorio1a10()];
+let palavra3 = geradorDePalavra();
+let arrayPalavraAleatoriaInserida3 = []
+function horizontal2(){
+    j = 0;
+    for (let i = colunarandom2; i<cells.length; i++){        
+        if ( palavra3[j] === undefined){
+            break;
+        }else{
+            cells[i].innerText = palavra3[j];
+      
+            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
+            j+=1;
+        }
+    }
+}
 vertical()
 horizontal1()
+horizontal2()
 //FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
     let maior; 
 if (palavra.length > palavra2.length){
@@ -94,12 +97,32 @@ if (palavra.length > palavra2.length){
 }else{
     maior = palavra2;
 }
+
+let soma1;
+let valorcomparado = 0;
+let array = [palavra.length, palavra2.length, palavra3.length]
+for (let i=0; i<array.length; i++){
+    if (array[i]>valorcomparado){
+        soma1 = array[i]
+    }
+}
+
+
 function colisao(){
-  for (let i=0; i<maior.length; i++){
+  for (let i=0; i<soma1; i++){
      for (let j = 0; j<maior.length; j++){
      if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] ||
-            arrayPalavraAleatoriaInserida == [] || arrayPalavraAleatoriaInserida2 == []
-        || palavra == palavra2 || palavra == "" || palavra2 == ""){
+        arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida3[j] ||
+        arrayPalavraAleatoriaInserida2[i] === arrayPalavraAleatoriaInserida[j] ||
+        arrayPalavraAleatoriaInserida2[i] === arrayPalavraAleatoriaInserida3[j] ||
+        arrayPalavraAleatoriaInserida3[i] === arrayPalavraAleatoriaInserida2[j]  ||
+        arrayPalavraAleatoriaInserida3[i] === arrayPalavraAleatoriaInserida[j]  ||
+      
+            arrayPalavraAleatoriaInserida == [] || arrayPalavraAleatoriaInserida2 == [] || arrayPalavraAleatoriaInserida3 == []
+            || palavra == palavra2 ||  palavra == palavra3 
+            || palavra2 == palavra3||  palavra2 == palavra
+            || palavra3 == palavra||  palavra3 == palavra2
+            || palavra == "" || palavra2 == "" || palavra3 == "" ){
       
     location.reload();
 }
@@ -123,13 +146,15 @@ function validacaoDeDados(){
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join(""); 
+        let string4 = arrayPalavraAleatoriaInserida3.join(""); 
        
  
+    console.log(arrayLetraClicada)
+    console.log(soma1)
+    let maiordamaior = soma1+4;
 
-
-        if (arrayLetraClicada.length>maior.length){
+        if (arrayLetraClicada.length>maiordamaior){
             
-                   
                     errou()
                 for (let i = 0; i<arrayLetraClicada.length; i++){
                 cells[arrayLetraClicada[i]-1].classList.remove("blue")
@@ -166,9 +191,20 @@ function validacaoDeDados(){
                 }
             arrayLetraClicada = [];
         }
-        if (vitoria>=2){
+
+        if (string1 == string4){
+            vitoria +=1;
+           
+         
+            for (let i = 0; i<arrayLetraClicada.length; i++){
+                cells[arrayLetraClicada[i]-1].classList = "green";
+                  console.log(cells[arrayLetraClicada[i]-1])
+             
+                }
+            arrayLetraClicada = [];
+        }
+        if (vitoria>=3){
             venceu()
-            alert("venceu!")
         }
 }
 
@@ -221,6 +257,7 @@ function errou(){
 //MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
 const p1 = document.getElementById("palavra")
 const p2 = document.getElementById("palavra2")
+const p3 = document.getElementById("palavra3")
 //FUNCAO QUE RESETA O JOGO
 function resetando(){
     location.reload();
@@ -229,6 +266,7 @@ const reset = document.getElementById("reset")
 reset.addEventListener("click", resetando)
 p1.innerText = palavra
 p2.innerText = palavra2
+p3.innerText = palavra3
 
   
 
