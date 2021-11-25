@@ -78,8 +78,29 @@ function play() {
  function pause() {
     player.pause();
  }
-  button.addEventListener('click', function(){
+button.addEventListener('click', function(){
          if(player.paused){
              play();
          }else{pause();}
 });
+
+// Capturando nome do player //
+/*const userName = [];
+
+const valorDigitado = Document.getElementById('send');
+
+valorDigitado.addEventListener('click', function(){
+    const capturar =  document.getElementById('name');
+    const nameValue = capturar.value;
+    userName.innerText = nameValue;
+});
+console.log(userName);*/
+const userName = [];
+const input = document.getElementById('name');
+const namePlayer = input.value;
+
+
+const value = document.getElementById('send')
+ value.addEventListener('click', function(){
+  userName.innerText = namePlayer;
+ });console.log(userName)
