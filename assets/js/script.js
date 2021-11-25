@@ -105,7 +105,7 @@ function colisao(){
   for (let i=0; i<maior.length; i++){
      for (let j = 0; j<maior.length; j++){
      if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] 
-        || palavra == palavra2 || palavra == "" || palavra2 == ""){
+        || palavra == palavra2 || palavra == "" || palavra2 == "" || palavra3 == ""){
       
     location.reload();
 }
@@ -120,8 +120,11 @@ function ClickTabela(){
 //FUNÇÃO QUE VERIFICA A VITORIA
 function validacaoDeDados(){
   
-       
+    let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
+        console.log(string1)
+        console.log(string2)
+        console.log(string3)
         
         if (string1 == string2){
             alert("Acertou a frase!");
@@ -132,7 +135,7 @@ function validacaoDeDados(){
         }
     
 
-        let string1 = arrayLetraClicada.join("");
+     
         let string3 = arrayPalavraAleatoriaInserida2.join("");
         console.log(string1)
         console.log(string3)
@@ -188,9 +191,15 @@ function click(){
 //MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
 const p1 = document.getElementById("palavra")
 const p2 = document.getElementById("palavra2")
-
+const reset = document.getElementById("reset")
 p1.innerText = palavra
 p2.innerText = palavra2
+
+reset.addEventListener('click', resets)
+
+function resets(){
+    location.reload();
+}
 
   
 
