@@ -1,7 +1,7 @@
 //ARRAY DE PALAVRAS DO JOGO
-const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
-'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
-'cornival','harry','minerva','neville','edwiges']
+const palavras = ['comensal','murta','weasley','azkaban','horcrux','nimbus',
+'dobby', 'hagrid', 'potter','malfoy','rony','draco', 'severus', 'sirius',
+'corvinal','harry','minerva','neville','edwiges']
 //ADICIONADO TODAS AS ALTERAÇÕES A TABLEA
 const cells = document.querySelectorAll('td');
 //GERADOR DE LETRAS ALEATORIAS NA TABELA
@@ -98,7 +98,7 @@ function colisao(){
   for (let i=0; i<maior.length; i++){
      for (let j = 0; j<maior.length; j++){
      if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] ||
-            arrayPalavraAleatoriaInserida == [] || arrayPalavraAleatoriaInserida == []
+            arrayPalavraAleatoriaInserida == [] || arrayPalavraAleatoriaInserida2 == []
         || palavra == palavra2 || palavra == "" || palavra2 == ""){
       
     location.reload();
@@ -129,7 +129,8 @@ function validacaoDeDados(){
 
         if (arrayLetraClicada.length>maior.length){
             
-                    alert("Errou a palavra!")
+                   
+                    errou()
                 for (let i = 0; i<arrayLetraClicada.length; i++){
                 cells[arrayLetraClicada[i]-1].classList.remove("blue")
                   console.log(cells[arrayLetraClicada[i]-1])
@@ -143,7 +144,8 @@ function validacaoDeDados(){
 
         if (string1 == string2){
             vitoria +=1;
-            alert("Acertou a palavra!");
+        
+    
             for (let i = 0; i<arrayLetraClicada.length; i++){
                 cells[arrayLetraClicada[i]-1].classList = "green";
                   console.log(cells[arrayLetraClicada[i]-1])
@@ -155,7 +157,8 @@ function validacaoDeDados(){
            
         if (string1 == string3){
             vitoria +=1;
-            alert("Acertou a palavra!");
+           
+         
             for (let i = 0; i<arrayLetraClicada.length; i++){
                 cells[arrayLetraClicada[i]-1].classList = "green";
                   console.log(cells[arrayLetraClicada[i]-1])
@@ -164,6 +167,7 @@ function validacaoDeDados(){
             arrayLetraClicada = [];
         }
         if (vitoria>=2){
+            venceu()
             alert("venceu!")
         }
 }
@@ -173,12 +177,11 @@ for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
     cells[i].addEventListener('click', color);
     cells[i].addEventListener('click', validacaoDeDados);    
-    //cells[i].addEventListener('click', function(){
-      //  if(clicks){
-        //    click();
-       // }
-       
-//});
+    cells[i].addEventListener('click', function(){
+       if(clicks){
+          click();
+       }
+       });
 function color(){
     cells[i].classList = "blue";
 }
@@ -186,16 +189,25 @@ function color(){
 //ADICIONANDO MUSICA A PAGINA
 const clicks = document.getElementById('click');
 const player = document.getElementById('audio');
-
+const vitoriacaiu = document.getElementById('vitoria')
+const erroclicado = document.getElementById('errado')
+const vencedor = document.getElementById('venceu')
 const button = document.getElementById('musica');
 function play() {
     player.play();
    
-   
-    
+}
+function winners(){
+    vitoriacaiu.play()
+}
+function venceu(){
+    vencedor.play();
 }
 function click(){
     clicks.play();
+}
+function errou(){
+    erroclicado.play();
 }
  function pause() {
     player.pause();
