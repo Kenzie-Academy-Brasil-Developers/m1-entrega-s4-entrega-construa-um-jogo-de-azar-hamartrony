@@ -35,7 +35,9 @@ function aleatorio0a19() {
 }
 //ESCOLHE UMA COLUNA DENTRO DO ARRAY DE COLUNAS
 const coluna = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91];
+const coluna2 = [2, 12, 22, 32, 42, 52, 62, 72, 82, 92]
 const colunaramdom = coluna[aleatorio1a10()];
+const colunarandom2 = coluna2[aleatorio1a10()];
 //FUNCAO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
 let arrayLetraClicada = []
@@ -53,13 +55,14 @@ function vertical(){
         }
     }
 }
+vertical()
 //FUNCAO QUE JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
 let palavra2 = geradorDePalavra();
 let arrayPalavraAleatoriaInserida2 = []
 function horizontal1(){
-    console.log("teste");
+   
     j = 0;
-    for (let i = colunaramdom; i<cells.length; i++){        
+    for (let i = colunarandom2; i<cells.length; i++){        
         if ( palavra2[j] === undefined){
             break;
         }else{
@@ -70,24 +73,24 @@ function horizontal1(){
         }
     }
 }
-//FUNCAO QUE JOGA A TERCEIRA PALAVRA DE FORMA HORIZONTAL
-//let palavra3 = geradorDePalavra();
-//let arrayPalavraAleatoriaInserida3 = []
-//function horizontal2(){
-//    j = 0;
-//    for (let i = colunaramdom; i<cells.length; i++){        
-//        if ( palavra3[j] === undefined){
-//            break;
-//        }else{
-//            cells[i].innerText = palavra3[j];
-//            console.log(palavra3[j]);
-//            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
-//            j+=1;
-//        }
-//    }
-//}
-vertical()
 horizontal1()
+//FUNCAO QUE JOGA A TERCEIRA PALAVRA DE FORMA HORIZONTAL
+let palavra3 = geradorDePalavra();
+let arrayPalavraAleatoriaInserida3 = []
+function horizontal2(){
+    j = 0;
+    for (let i = colunaramdom; i<cells.length; i++){        
+        if ( palavra3[j] === undefined){
+            break;
+        }else{
+            cells[i].innerText = palavra3[j];
+            console.log(palavra3[j]);
+            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
+            j+=1;
+        }
+    }
+}
+horizontal2()
 //horizontal2()
 //FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
     let maior; 
@@ -99,7 +102,7 @@ if (palavra.length > palavra2.length){
 
 console.log(palavra)
 console.log(palavra2)
-console.log()
+console.log(palavra3)
 
 function colisao(){
   for (let i=0; i<maior.length; i++){
@@ -134,8 +137,7 @@ function validacaoDeDados(){
 
         let string1 = arrayLetraClicada.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
-        console.log(string1)
-        console.log(string3)
+        
         
         if (string1 == string3){
             alert("Acertou a frase!");
@@ -188,9 +190,11 @@ function click(){
 //MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
 const p1 = document.getElementById("palavra")
 const p2 = document.getElementById("palavra2")
+const p3 = document.getElementById("palavra3")
 
 p1.innerText = palavra
 p2.innerText = palavra2
+p3.innerText = palavra3
 
   
 
