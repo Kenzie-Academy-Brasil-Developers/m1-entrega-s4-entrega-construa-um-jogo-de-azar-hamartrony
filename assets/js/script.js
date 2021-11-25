@@ -1,7 +1,7 @@
 //ARRAY DE PALAVRAS DO JOGO
-const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
-'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
-'cornival','harry','minerva','neville','edwiges']
+const palavras = ['comensal','murta','weasley','azkaban','horcrux','nimbus',
+'dobby', 'hagrid', 'potter','malfoy','rony','draco', 'severus', 'sirius',
+'corvinal','harry','minerva','neville','edwiges']
 //ADICIONADO TODAS AS ALTERAÇÕES A TABLEA
 const cells = document.querySelectorAll('td');
 //GERADOR DE LETRAS ALEATORIAS NA TABELA
