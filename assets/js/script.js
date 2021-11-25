@@ -1,7 +1,7 @@
 //ARRAY DE PALAVRAS DO JOGO
 const palavras = ['comensal','hermione','sonserina','azkaban','horcrux','nimbus',
 'dobby', 'hagrid', 'potter','mafoy','ronald','draco', 'severus', 'sirius',
-'cornival','harry','hermione','minerva','neville','edwiges']
+'cornival','harry','minerva','neville','edwiges']
 //ADICIONADO TODAS AS ALTERAÇÕES A TABLEA
 const cells = document.querySelectorAll('td');
 //GERADOR DE LETRAS ALEATORIAS NA TABELA
@@ -44,7 +44,7 @@ function vertical(){
     let j = 0;
     for (let i = aleatorio1a10(); i<cells.length; i+=10){        
         if ( palavra[j] === undefined ){
-            cells[i].innerText = geradorDeLetra()
+           break;
         }else{
             cells[i].innerText = palavra[j];
             console.log(palavra[j]);
@@ -57,6 +57,7 @@ function vertical(){
 let palavra2 = geradorDePalavra();
 let arrayPalavraAleatoriaInserida2 = []
 function horizontal1(){
+    console.log("teste");
     j = 0;
     for (let i = colunaramdom; i<cells.length; i++){        
         if ( palavra2[j] === undefined){
@@ -89,12 +90,24 @@ vertical()
 horizontal1()
 //horizontal2()
 //FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
-function colisao(){
-  for (let i=0; i<=10; i++){
-     for (let j = 0; j<=10; j++){
-     if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j]){
+    let maior; 
+if (palavra.length > palavra2.length){
+    maior = palavra;
+}else{
+    maior = palavra2;
+}
 
-    console.log("teste");
+console.log(palavra)
+console.log(palavra2)
+console.log()
+
+function colisao(){
+  for (let i=0; i<maior.length; i++){
+     for (let j = 0; j<maior.length; j++){
+     if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] 
+        || palavra == palavra2 || palavra == "" || palavra2 == ""){
+      
+    location.reload();
 }
 }}
 }
@@ -109,10 +122,10 @@ function validacaoDeDados(){
     if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
-        let string3 = arrayPalavraAleatoriaInserida2.join("");
         
         if (string1 == string2){
             alert("Acertou a frase!");
+            arrayLetraClicada = [];
         }else{
             alert("Errou a frase!");
             arrayLetraClicada = [];
@@ -121,9 +134,12 @@ function validacaoDeDados(){
     if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
         let string1 = arrayLetraClicada.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
+        console.log(string1)
+        console.log(string3)
         
         if (string1 == string3){
             alert("Acertou a frase!");
+            arrayLetraClicada = [];
         }else{
             alert("Errou a frase!");
             arrayLetraClicada = [];

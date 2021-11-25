@@ -1,0 +1,16 @@
+//FUNCAO QUE JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
+let palavra2 = geradorDePalavra();
+let arrayPalavraAleatoriaInserida2 = []
+function horizontal1(){
+    j = 0;
+    for (let i = colunaramdom; i<cells.length; i++){        
+        if ( palavra2[j] === undefined){
+            break;
+        }else{
+            cells[i].innerText = palavra2[j];
+            console.log(palavra2[j]);
+            arrayPalavraAleatoriaInserida2.push(cells[i].id)    
+            j+=1;
+        }
+    }
+}
