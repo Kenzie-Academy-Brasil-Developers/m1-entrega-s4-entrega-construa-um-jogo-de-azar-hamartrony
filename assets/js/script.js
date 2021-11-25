@@ -35,9 +35,7 @@ function aleatorio0a19() {
 }
 //ESCOLHE UMA COLUNA DENTRO DO ARRAY DE COLUNAS
 const coluna = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91];
-const coluna2 = [2, 12, 22, 32, 42, 52, 62, 72, 82, 92]
 const colunaramdom = coluna[aleatorio1a10()];
-const colunarandom2 = coluna2[aleatorio1a10()];
 //FUNCAO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
 let arrayLetraClicada = []
@@ -55,14 +53,12 @@ function vertical(){
         }
     }
 }
-vertical()
 //FUNCAO QUE JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
 let palavra2 = geradorDePalavra();
 let arrayPalavraAleatoriaInserida2 = []
 function horizontal1(){
-   
     j = 0;
-    for (let i = colunarandom2; i<cells.length; i++){        
+    for (let i = colunaramdom; i<cells.length; i++){        
         if ( palavra2[j] === undefined){
             break;
         }else{
@@ -73,25 +69,24 @@ function horizontal1(){
         }
     }
 }
-horizontal1()
 //FUNCAO QUE JOGA A TERCEIRA PALAVRA DE FORMA HORIZONTAL
-let palavra3 = geradorDePalavra();
-let arrayPalavraAleatoriaInserida3 = []
-function horizontal2(){
-    j = 0;
-    for (let i = colunaramdom; i<cells.length; i++){        
-        if ( palavra3[j] === undefined){
-            break;
-        }else{
-            cells[i].innerText = palavra3[j];
-            console.log(palavra3[j]);
-            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
-            j+=1;
-        }
-    }
-}
-horizontal2()
-//horizontal2()
+//let palavra3 = geradorDePalavra();
+//let arrayPalavraAleatoriaInserida3 = []
+//function horizontal2(){
+//    j = 0;
+//    for (let i = colunaramdom; i<cells.length; i++){        
+//        if ( palavra3[j] === undefined){
+//            break;
+//        }else{
+//            cells[i].innerText = palavra3[j];
+//            console.log(palavra3[j]);
+//            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
+//            j+=1;
+//        }
+//    }
+//}
+vertical()
+horizontal1()
 //FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
     let maior; 
 if (palavra.length > palavra2.length){
@@ -99,11 +94,6 @@ if (palavra.length > palavra2.length){
 }else{
     maior = palavra2;
 }
-
-console.log(palavra)
-console.log(palavra2)
-console.log(palavra3)
-
 function colisao(){
   for (let i=0; i<maior.length; i++){
      for (let j = 0; j<maior.length; j++){
@@ -120,46 +110,56 @@ function ClickTabela(){
     const cell = event.target.id;
     arrayLetraClicada.push(cell);
 }
+console.log(arrayPalavraAleatoriaInserida)
+console.log(arrayPalavraAleatoriaInserida2)
 //FUNÇÃO QUE VERIFICA A VITORIA
 function validacaoDeDados(){
-  
-       
+    for(let i = 0; i<maior.length; i++){
+        let verificaoLetra = [];
+        if (arrayPalavraAleatoriaInserida[i] == arrayLetraClicada[i]){
+            verificaoLetra.push(arrayLetraClicada[i])
+        }
+    } 
+
+    if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
+        let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
+       
         
         if (string1 == string2){
-            alert("Acertou a frase!");
+            alert("Acertou a palavra!");
             arrayLetraClicada = [];
         }else{
-            alert("Errou a frase!");
-            arrayLetraClicada = [];
+            alert("Errou a palavra!");
+           
         }
-    
-
+    }
+    if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
         let string1 = arrayLetraClicada.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
         
-        
         if (string1 == string3){
-            alert("Acertou a frase!");
+            alert("Acertou a palavra!");
             arrayLetraClicada = [];
         }else{
-            alert("Errou a frase!");
+            alert("Errou a palavra!");
             arrayLetraClicada = [];
         }
-    
+    }
     
 }
+
 //EVENTOS DE CLICK SENDO ESPERADOS
 for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
     cells[i].addEventListener('click', validacaoDeDados);  
     cells[i].addEventListener('click', color);  
-    cells[i].addEventListener('click', function(){
-        if(clicks){
-            click();
-        }
+    //cells[i].addEventListener('click', function(){
+      //  if(clicks){
+        //    click();
+       // }
        
-});
+//});
 function color(){
     cells[i].classList = "blue";
 }
@@ -190,11 +190,15 @@ function click(){
 //MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
 const p1 = document.getElementById("palavra")
 const p2 = document.getElementById("palavra2")
-const p3 = document.getElementById("palavra3")
 
 p1.innerText = palavra
 p2.innerText = palavra2
-p3.innerText = palavra3
 
   
+
+
+
+
+  
+
 
