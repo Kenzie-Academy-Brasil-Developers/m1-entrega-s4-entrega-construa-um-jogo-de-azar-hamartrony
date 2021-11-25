@@ -10,8 +10,7 @@ function geradorDeLetra(){
     return alfabeto[Math.floor(Math.random() * alfabeto.length)]
 }
 //FUNÇÃO QUE ESCOLHE 1 PALAVRA ALEATORIA DENTRO DO ARRAY DE PALAVRAS 
-
-    function geradorDePalavra(){
+function geradorDePalavra(){
     let result = [];
     for(let i = 0; i < 1; i++){
     result.push(palavras[aleatorio0a19()])
@@ -37,86 +36,73 @@ function aleatorio0a19() {
 //ESCOLHE UMA COLUNA DENTRO DO ARRAY DE COLUNAS
 const coluna = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91];
 const colunaramdom = coluna[aleatorio1a10()];
-
-
-//JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
+//FUNCAO QUE JOGA A PRIMEIRA PALAVRAS DE FORMA VERTICAL 
 const palavra = geradorDePalavra();
+let arrayLetraClicada = []
+let arrayPalavraAleatoriaInserida = [];
+function vertical(){
     let j = 0;
-    let arrayPalavraAleatoriaInserida = []
-    let arrayLetraClicada = []
-
     for (let i = aleatorio1a10(); i<cells.length; i+=10){        
-    if ( palavra[j] === undefined ){
-        cells[i].innerText = geradorDeLetra()
-    }else{
-        cells[i].innerText = palavra[j];
-        console.log(palavra[j]);
-        arrayPalavraAleatoriaInserida.push(cells[i].id)    
-        j+=1;
+        if ( palavra[j] === undefined ){
+            cells[i].innerText = geradorDeLetra()
+        }else{
+            cells[i].innerText = palavra[j];
+            console.log(palavra[j]);
+            arrayPalavraAleatoriaInserida.push(cells[i].id)    
+            j+=1;
+        }
     }
-    
 }
-
-
-
-//JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
+//FUNCAO QUE JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
 let palavra2 = geradorDePalavra();
-
-     j = 0;
 let arrayPalavraAleatoriaInserida2 = []
-
-
+function horizontal1(){
+    j = 0;
     for (let i = colunaramdom; i<cells.length; i++){        
-
-    if ( palavra2[j] === undefined){
-        break;
-    }else{
-        cells[i].innerText = palavra2[j];
-        console.log(palavra2[j]);
-        arrayPalavraAleatoriaInserida2.push(cells[i].id)    
-        j+=1;
-    }
-    
-}
-
-
-let palavra3 = geradorDePalavra();
-j = 0;
-let arrayPalavraAleatoriaInserida3 = []
-//HORIZONTAL 2
-function horizontal2(){
-
-    for (let i = colunaramdom; i<cells.length; i++){        
-
-    if ( palavra3[j] === undefined){
-        break;
-    }else{
-        cells[i].innerText = palavra3[j];
-        console.log(palavra3[j]);
-        arrayPalavraAleatoriaInserida3.push(cells[i].id)    
-        j+=1;
+        if ( palavra2[j] === undefined){
+            break;
+        }else{
+            cells[i].innerText = palavra2[j];
+            console.log(palavra2[j]);
+            arrayPalavraAleatoriaInserida2.push(cells[i].id)    
+            j+=1;
+        }
     }
 }
-}
-//vertical()
-//horizontal()
-horizontal2()
-
+//FUNCAO QUE JOGA A TERCEIRA PALAVRA DE FORMA HORIZONTAL
+//let palavra3 = geradorDePalavra();
+//let arrayPalavraAleatoriaInserida3 = []
+//function horizontal2(){
+//    j = 0;
+//    for (let i = colunaramdom; i<cells.length; i++){        
+//        if ( palavra3[j] === undefined){
+//            break;
+//        }else{
+//            cells[i].innerText = palavra3[j];
+//            console.log(palavra3[j]);
+//            arrayPalavraAleatoriaInserida3.push(cells[i].id)    
+//            j+=1;
+//        }
+//    }
+//}
+vertical()
+horizontal1()
+//horizontal2()
 //FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
+function colisao(){
+  for (let i=0; i<=10; i++){
+     for (let j = 0; j<=10; j++){
+     if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j]){
 
-
-//for (let i=0; i<=10; i++){
-   // for (let j = 0; j<=10; j++){
-//if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j] || arrayPalavraAleatoriaInserida2[i] == arrayPalavraAleatoriaInserida3[j] || arrayPalavraAleatoriaInserida[i] == undefined || arrayPalavraAleatoriaInserida2[i] == undefined ){
-  //  horizontal()
-    //   }}
-    //}
+    console.log("teste");
+}
+}}
+}
+colisao()
 //FUNÇÃO QUE CAPTURA O ID DAS LETRAS
 function ClickTabela(){
     const cell = event.target.id;
-    console.log(arrayLetraClicada)
     arrayLetraClicada.push(cell);
-    console.log(cell)
 }
 //FUNÇÃO QUE VERIFICA A VITORIA
 function validacaoDeDados(){
@@ -124,15 +110,26 @@ function validacaoDeDados(){
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
-        let string4 = arrayPalavraAleatoriaInserida3.join("");
         
-        if (string1 == string2 || string1 == string3 || string1 == string4){
+        if (string1 == string2){
             alert("Acertou a frase!");
         }else{
             alert("Errou a frase!");
             arrayLetraClicada = [];
         }
     }
+    if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
+        let string1 = arrayLetraClicada.join("");
+        let string3 = arrayPalavraAleatoriaInserida2.join("");
+        
+        if (string1 == string3){
+            alert("Acertou a frase!");
+        }else{
+            alert("Errou a frase!");
+            arrayLetraClicada = [];
+        }
+    }
+    
 }
 //EVENTOS DE CLICK SENDO ESPERADOS
 for (let i=0; i<cells.length; i++ ){
