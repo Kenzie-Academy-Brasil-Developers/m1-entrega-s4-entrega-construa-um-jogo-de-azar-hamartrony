@@ -44,7 +44,7 @@ const palavra = geradorDePalavra();
     let j = 0;
     let arrayPalavraAleatoriaInserida = []
     let arrayLetraClicada = []
-    
+
     for (let i = aleatorio1a10(); i<cells.length; i+=10){        
     if ( palavra[j] === undefined ){
         cells[i].innerText = geradorDeLetra()
@@ -57,10 +57,15 @@ const palavra = geradorDePalavra();
     
 }
 
+
+
 //JOGA A SEGUNDA PALAVRA DE FORMA HORIZONTAL
 let palavra2 = geradorDePalavra();
+
      j = 0;
 let arrayPalavraAleatoriaInserida2 = []
+
+
     for (let i = colunaramdom; i<cells.length; i++){        
 
     if ( palavra2[j] === undefined){
@@ -73,15 +78,39 @@ let arrayPalavraAleatoriaInserida2 = []
     }
     
 }
-//FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
-console.log(arrayPalavraAleatoriaInserida)
-console.log(arrayPalavraAleatoriaInserida2)
-for (let i=0; i<=10; i++){
-    for (let j = 0; j<=10; j++){
-if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j] || arrayPalavraAleatoriaInserida[i] == undefined || arrayPalavraAleatoriaInserida2[i] == undefined ){
-        console.log("teste")
-       }}
+
+
+let palavra3 = geradorDePalavra();
+j = 0;
+let arrayPalavraAleatoriaInserida3 = []
+//HORIZONTAL 2
+function horizontal2(){
+
+    for (let i = colunaramdom; i<cells.length; i++){        
+
+    if ( palavra3[j] === undefined){
+        break;
+    }else{
+        cells[i].innerText = palavra3[j];
+        console.log(palavra3[j]);
+        arrayPalavraAleatoriaInserida3.push(cells[i].id)    
+        j+=1;
     }
+}
+}
+//vertical()
+//horizontal()
+horizontal2()
+
+//FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
+
+
+//for (let i=0; i<=10; i++){
+   // for (let j = 0; j<=10; j++){
+//if (arrayPalavraAleatoriaInserida[i] == arrayPalavraAleatoriaInserida2[j] || arrayPalavraAleatoriaInserida2[i] == arrayPalavraAleatoriaInserida3[j] || arrayPalavraAleatoriaInserida[i] == undefined || arrayPalavraAleatoriaInserida2[i] == undefined ){
+  //  horizontal()
+    //   }}
+    //}
 //FUNÇÃO QUE CAPTURA O ID DAS LETRAS
 function ClickTabela(){
     const cell = event.target.id;
@@ -95,8 +124,9 @@ function validacaoDeDados(){
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
+        let string4 = arrayPalavraAleatoriaInserida3.join("");
         
-        if (string1 == string2 || string1 == string3){
+        if (string1 == string2 || string1 == string3 || string1 == string4){
             alert("Acertou a frase!");
         }else{
             alert("Errou a frase!");
