@@ -68,11 +68,17 @@ function validacaoDeDados(){
 for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
     cells[i].addEventListener('click', validacaoDeDados);  
+    cells[i].addEventListener('click', color);  
     cells[i].addEventListener('click', function(){
         if(clicks){
             click();
         }
+       
 });
+function color(){
+    console.log("teste")
+    cells[i].classList = "red";
+}
 }
 //ADICIONANDO MUSICA A PAGINA
 const clicks = document.getElementById('click');
@@ -96,3 +102,4 @@ function click(){
              play();
          }else{pause();}
 });
+

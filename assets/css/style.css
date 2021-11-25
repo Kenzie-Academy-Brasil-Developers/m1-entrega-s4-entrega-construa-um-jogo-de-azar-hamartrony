@@ -1,4 +1,6 @@
-
+.red{
+    background-color: red;
+}
 :root{
     /* CORES */
     --slytherin-green: #0d6217;
