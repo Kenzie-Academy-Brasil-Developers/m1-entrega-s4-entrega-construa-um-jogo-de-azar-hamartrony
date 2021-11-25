@@ -92,6 +92,7 @@
     padding: 5px;
     border: 2px solid black;
     border-radius: 0 15px 15px 0;
+    cursor: url("../img/varinha.cur"), auto;
 }
 .input button:active{
     background-color: var(--ravenclaw-blue);
@@ -120,11 +121,11 @@
     .main img{
         width: 60%;
     }
-    .input input:nth-child(1){
+    .input input{
         width: 30vw;
         padding: 5px 20px;
     }
-    .input input:nth-child(2){
+    .input button{
         width: 10vw;
     }
 }
@@ -134,10 +135,10 @@
     .header h1, .footer h3{
         width: 40vw;
     }
-    .input input:nth-child(1){
+    .input input{
         width: 20vw;
     }
-    .input input:nth-child(2){
+    .input button{
         width: 10vw;
     }
 }

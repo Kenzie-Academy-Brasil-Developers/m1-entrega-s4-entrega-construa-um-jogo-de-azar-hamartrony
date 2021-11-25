@@ -55,6 +55,7 @@
 
 #musica {
     width: 20px;
+    cursor: url("../img/varinha.cur"), auto;
 }
 
 .objetivo {
