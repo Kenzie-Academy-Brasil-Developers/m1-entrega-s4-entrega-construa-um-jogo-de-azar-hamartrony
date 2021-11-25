@@ -58,8 +58,10 @@ function validacaoDeDados(){
         let string2 = arrayPalavraAleatoriaInserida.join("");
         if (string1 == string2){
             alert("Acertou a frase!");
+        
         }else{
             alert("Errou a frase!");
+          
             arrayLetraClicada = [];
         }
     }
@@ -68,12 +70,30 @@ function validacaoDeDados(){
 for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
     cells[i].addEventListener('click', validacaoDeDados);  
+    cells[i].addEventListener('click', color);  
+    cells[i].addEventListener('click', function(){
+        if(clicks){
+            click();
+        }
+       
+});
+function color(){
+    cells[i].classList = "blue";
+}
 }
 //ADICIONANDO MUSICA A PAGINA
+const clicks = document.getElementById('click');
 const player = document.getElementById('audio');
+
 const button = document.getElementById('musica');
 function play() {
-    player.play()
+    player.play();
+   
+   
+    
+}
+function click(){
+    clicks.play();
 }
  function pause() {
     player.pause();
@@ -83,3 +103,4 @@ function play() {
              play();
          }else{pause();}
 });
+
