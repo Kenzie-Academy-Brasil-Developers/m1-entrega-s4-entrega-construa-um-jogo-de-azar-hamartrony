@@ -57,7 +57,6 @@ function vertical(){
 let palavra2 = geradorDePalavra();
 let arrayPalavraAleatoriaInserida2 = []
 function horizontal1(){
-    console.log("teste");
     j = 0;
     for (let i = colunaramdom; i<cells.length; i++){        
         if ( palavra2[j] === undefined){
@@ -88,7 +87,6 @@ function horizontal1(){
 //}
 vertical()
 horizontal1()
-//horizontal2()
 //FUNÇÃO QUE VERIFICA A COLISÃO DE PALAVRAS
     let maior; 
 if (palavra.length > palavra2.length){
@@ -96,11 +94,6 @@ if (palavra.length > palavra2.length){
 }else{
     maior = palavra2;
 }
-
-console.log(palavra)
-console.log(palavra2)
-console.log()
-
 function colisao(){
   for (let i=0; i<maior.length; i++){
      for (let j = 0; j<maior.length; j++){
@@ -117,41 +110,93 @@ function ClickTabela(){
     const cell = event.target.id;
     arrayLetraClicada.push(cell);
 }
+console.log(arrayPalavraAleatoriaInserida)
+console.log(arrayPalavraAleatoriaInserida2)
 //FUNÇÃO QUE VERIFICA A VITORIA
 function validacaoDeDados(){
+    for(let i = 0; i<maior.length; i++){
+        let verificaoLetra = [];
+        if (arrayPalavraAleatoriaInserida[i] == arrayLetraClicada[i]){
+            verificaoLetra.push(arrayLetraClicada[i])
+        }
+    } 
+
     if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
+       
         
         if (string1 == string2){
-            alert("Acertou a frase!");
+            alert("Acertou a palavra!");
             arrayLetraClicada = [];
         }else{
-            alert("Errou a frase!");
-            arrayLetraClicada = [];
+            alert("Errou a palavra!");
+           
         }
     }
     if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
         let string1 = arrayLetraClicada.join("");
         let string3 = arrayPalavraAleatoriaInserida2.join("");
-        console.log(string1)
-        console.log(string3)
         
         if (string1 == string3){
-            alert("Acertou a frase!");
+            alert("Acertou a palavra!");
             arrayLetraClicada = [];
         }else{
-            alert("Errou a frase!");
+            alert("Errou a palavra!");
             arrayLetraClicada = [];
         }
     }
     
 }
+
 //EVENTOS DE CLICK SENDO ESPERADOS
 for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
     cells[i].addEventListener('click', validacaoDeDados);  
+    cells[i].addEventListener('click', color);  
+    //cells[i].addEventListener('click', function(){
+      //  if(clicks){
+        //    click();
+       // }
+       
+//});
+function color(){
+    cells[i].classList = "blue";
 }
+}
+//ADICIONANDO MUSICA A PAGINA
+const clicks = document.getElementById('click');
+const player = document.getElementById('audio');
+
+const button = document.getElementById('musica');
+function play() {
+    player.play();
+   
+   
+    
+}
+function click(){
+    clicks.play();
+}
+ function pause() {
+    player.pause();
+ }
+  button.addEventListener('click', function(){
+         if(player.paused){
+             play();
+         }else{pause();}
+});
+
+//MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
+const p1 = document.getElementById("palavra")
+const p2 = document.getElementById("palavra2")
+
+p1.innerText = palavra
+p2.innerText = palavra2
+
+  
+
+
 
 
   
