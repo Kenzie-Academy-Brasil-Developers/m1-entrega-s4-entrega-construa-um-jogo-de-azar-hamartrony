@@ -45,6 +45,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
 }
+
 /* IMAGEM */
 .main a {
     display: flex;
@@ -69,6 +70,34 @@
     margin: 20px;
 }
 
+.input{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+.input input{
+    width: 50vw;
+    outline: none;
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 15px 0 0 15px;
+}
+.input button{
+    background-color: var(--ravenclaw-yellow);
+    width: 20vw;
+    font-family: var(--fontfamily-hp);
+    font-size: 11px;
+    color: white;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 0 15px 15px 0;
+    cursor: url("../img/varinha.cur"), auto;
+}
+.input button:active{
+    background-color: var(--ravenclaw-blue);
+    transform: translateY(1px);
+}
+
 /* BREAKPOINTS */
 @media screen and (min-width: 375px) {
     .main img{
@@ -83,5 +112,17 @@
     }
     .main img{
         width: 60%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .header h1, .footer h3{
+        width: 40vw;
+    }
+    .input input{
+        width: 20vw;
+    }
+    .input button{
+        width: 10vw;
     }
 }
