@@ -97,7 +97,8 @@ if (palavra.length > palavra2.length){
 function colisao(){
   for (let i=0; i<maior.length; i++){
      for (let j = 0; j<maior.length; j++){
-     if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] 
+     if (arrayPalavraAleatoriaInserida[i] === arrayPalavraAleatoriaInserida2[j] ||
+            arrayPalavraAleatoriaInserida == [] || arrayPalavraAleatoriaInserida == []
         || palavra == palavra2 || palavra == "" || palavra2 == ""){
       
     location.reload();
@@ -109,51 +110,69 @@ colisao()
 function ClickTabela(){
     const cell = event.target.id;
     arrayLetraClicada.push(cell);
+    
 }
-console.log(arrayPalavraAleatoriaInserida)
-console.log(arrayPalavraAleatoriaInserida2)
-//FUNÇÃO QUE VERIFICA A VITORIA
-function validacaoDeDados(){
-    for(let i = 0; i<maior.length; i++){
-        let verificaoLetra = [];
-        if (arrayPalavraAleatoriaInserida[i] == arrayLetraClicada[i]){
-            verificaoLetra.push(arrayLetraClicada[i])
-        }
-    } 
 
-    if (arrayPalavraAleatoriaInserida.length == arrayLetraClicada.length){
+//FUNÇÃO QUE VERIFICA A VITORIA
+let vitoria = 0;
+function validacaoDeDados(){
+   
+    console.log(vitoria)
+           
+
         let string1 = arrayLetraClicada.join("");
         let string2 = arrayPalavraAleatoriaInserida.join("");
+        let string3 = arrayPalavraAleatoriaInserida2.join(""); 
        
-        
+ 
+
+
+        if (arrayLetraClicada.length>maior.length){
+            
+                    alert("Errou a palavra!")
+                for (let i = 0; i<arrayLetraClicada.length; i++){
+                cells[arrayLetraClicada[i]-1].classList.remove("blue")
+                  console.log(cells[arrayLetraClicada[i]-1])
+                }
+               
+
+                arrayLetraClicada = []
+                 } 
+                
+
+
         if (string1 == string2){
+            vitoria +=1;
             alert("Acertou a palavra!");
+            for (let i = 0; i<arrayLetraClicada.length; i++){
+                cells[arrayLetraClicada[i]-1].classList = "green";
+                  console.log(cells[arrayLetraClicada[i]-1])
+             
+                }
+               
             arrayLetraClicada = [];
-        }else{
-            alert("Errou a palavra!");
+        }
            
-        }
-    }
-    if (arrayPalavraAleatoriaInserida2.length == arrayLetraClicada.length){
-        let string1 = arrayLetraClicada.join("");
-        let string3 = arrayPalavraAleatoriaInserida2.join("");
-        
         if (string1 == string3){
+            vitoria +=1;
             alert("Acertou a palavra!");
-            arrayLetraClicada = [];
-        }else{
-            alert("Errou a palavra!");
+            for (let i = 0; i<arrayLetraClicada.length; i++){
+                cells[arrayLetraClicada[i]-1].classList = "green";
+                  console.log(cells[arrayLetraClicada[i]-1])
+             
+                }
             arrayLetraClicada = [];
         }
-    }
-    
+        if (vitoria>=2){
+            alert("venceu!")
+        }
 }
 
 //EVENTOS DE CLICK SENDO ESPERADOS
 for (let i=0; i<cells.length; i++ ){
     cells[i].addEventListener('click', ClickTabela);
-    cells[i].addEventListener('click', validacaoDeDados);  
-    cells[i].addEventListener('click', color);  
+    cells[i].addEventListener('click', color);
+    cells[i].addEventListener('click', validacaoDeDados);    
     //cells[i].addEventListener('click', function(){
       //  if(clicks){
         //    click();
@@ -190,7 +209,12 @@ function click(){
 //MOSTRANDO PALAVRAS QUE VAO SER GERADAS    
 const p1 = document.getElementById("palavra")
 const p2 = document.getElementById("palavra2")
-
+//FUNCAO QUE RESETA O JOGO
+function resetando(){
+    location.reload();
+}
+const reset = document.getElementById("reset")
+reset.addEventListener("click", resetando)
 p1.innerText = palavra
 p2.innerText = palavra2
 
